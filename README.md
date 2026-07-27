@@ -31,15 +31,23 @@
 
 ## 📊 GitHub Stats
 
-![](https://github-readme-stats.vercel.app/api?username=rishibanota&show_icons=true&theme=tokyonight)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rishibanota&show_icons=true&theme=tokyonight&cache_seconds=86400)
 
-![](https://github-readme-streak-stats.herokuapp.com/?user=rishibanota&theme=tokyonight)
-
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=rishibanota&layout=compact&theme=tokyonight)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rishibanota&layout=compact&theme=tokyonight&cache_seconds=86400)
 
 ## 🐍 Contributions
 
-![Snake](https://raw.githubusercontent.com/rishibanota/rishibanota/output/github-contribution-grid-snake.svg)
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://raw.githubusercontent.com/rishibanota/rishibanota/output/github-contribution-grid-snake-dark.svg">
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="https://raw.githubusercontent.com/rishibanota/rishibanota/output/github-contribution-grid-snake.svg">
+  <img
+    alt="GitHub contribution snake"
+    src="https://raw.githubusercontent.com/rishibanota/rishibanota/output/github-contribution-grid-snake.svg">
+</picture>
 
 ---
 
