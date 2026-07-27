@@ -24,7 +24,7 @@
 ## ⭐ Featured Projects
 
 - 📱 Volume Changer App
-- 🌐 Starter Tools Website
+- 🌐 ToolMint Website
 - 📚 Maharashtra Textbooks Collection
 - 🎮 Tic Tac Toe
 - 🔢 Multiplication Table App
