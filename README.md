@@ -29,9 +29,30 @@
 - 🎮 Tic Tac Toe
 - 🔢 Multiplication Table App
 
-## 📊 GitHub Stats
+## ◈ GitHub Stats `📊`
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rishibanota&show_icons=true&theme=tokyonight&cache_seconds=86400)
+<div align="center">
+
+<img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=rishibanota&theme=github_dark"/>
+<img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=rishibanota&theme=github_dark"/>
+
+</div>
+
+<div align="center">
+
+<img src="https://streak-stats.demolab.com?user=rishibanota&theme=dark&hide_border=true&background=0d0d0d&ring=F5A623&fire=F5A623&currStreakLabel=F5A623&sideLabels=F5A623&dates=ffffff&stroke=F5A623" />
+
+</div>
+
+<div align="center">
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=rishibanota&bg_color=0d0d0d&color=F5A623&line=F5A623&point=ffffff&area=true&area_color=F5A623&hide_border=true" width="100%" />
+</div>
+
+## ◈ Trophies `🏆`
+
+<div align="center">
+<img src="https://github-profile-trophy.vercel.app/?username=rishibanota&theme=darkhub&no-frame=true&row=1&column=7&margin-w=8" />
+</div>
 
 ## 🐍 Contributions
 
