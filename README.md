@@ -32,11 +32,11 @@
 
 ## ⭐ Featured Projects
 
-- 📱 Volume Changer App
+- 💻 Bugseer
 - 🌐 ToolMint Website
 - 📚 Maharashtra Textbooks Collection
-- 🎮 Tic Tac Toe
-- 🔢 Multiplication Table App
+- 🎮 Code Arcade
+- 💹 Crypto Stock Scanner
 
 ## ◈ GitHub Stats `📊`
 
