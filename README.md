@@ -34,7 +34,7 @@
 
 - 💻 Bugseer
 - 🌐 ToolMint Website
-- 📚 Maharashtra Textbooks Collection
+- 🤖 remembrandt
 - 🎮 Code Arcade
 - 💹 Crypto Stock Scanner
 
