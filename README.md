@@ -79,4 +79,24 @@
 
 ---
 
+## ❤️ Support My Work
+
+If you find this project useful, consider supporting its development.
+
+### Crypto Donations
+
+**USDT (Polygon)**
+
+`0xdf1cF46D129414f008de9214b43863d91908Bc6B`
+
+> Please send only **USDT on the Polygon network** to this address.
+
+**USDC (Base)**
+
+`0xdf1cF46D129414f008de9214b43863d91908Bc6B`
+
+> Please send only **USDC on the Base network** to this address.
+
+
 ⭐ Thanks for visiting my profile!
+
