@@ -81,7 +81,7 @@
 
 ## ❤️ Support My Work
 
-If you find this project useful, consider supporting its development.
+If you find my projects useful, consider supporting its development.
 
 ### Crypto Donations
 
