@@ -79,6 +79,14 @@
 
 ---
 
+## 💡 Have an App/Tool Idea?
+
+Have an idea for an app or tool you'd like me to build?
+
+📩 **[Send me your idea via Gmail](mailto:rishibanota837@gmail.com)**
+
+---
+
 ## ❤️ Support My Work
 
 If you find my projects useful, consider supporting its development.
