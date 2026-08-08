@@ -81,9 +81,11 @@
 
 ## 💡 Have an App/Tool Idea?
 
-Have an idea for an app or tool you'd like me to build?
+Got an idea for an app, website, or developer tool?
 
-📩 **[Send me your idea via Gmail](mailto:rishibanota837@gmail.com)**
+📩 **[Send me your idea →](https://mail.google.com/mail/?view=cm&fs=1&to=rishibanota837@gmail.com)**
+
+I’d love to hear your ideas and turn interesting ones into projects! 🚀
 
 ---
 
