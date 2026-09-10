@@ -34,7 +34,7 @@
 
 - 💻 Bugseer
 - 🌐 ToolMint Website
-- 🤖 remembrandt
+- 🛒 TryKaro
 - 🎮 Code Arcade
 - 💹 Crypto Stock Scanner
 
