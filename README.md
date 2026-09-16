@@ -87,6 +87,16 @@ Got an idea for an app, website, or developer tool?
 
 I’d love to hear your ideas and turn interesting ones into projects! 🚀
 
+## 🖥️ Help Me Build My Development PC
+
+My current laptop struggles with development workloads and is holding back the projects I want to build. I’m raising funds for a proper development workstation for coding, compiling, AI tools, 3D development, and other demanding workloads.
+
+❤️ **Want to support my development journey?**
+
+👉 **[Help me build my PC →](https://build-me-a-pc.vercel.app/)**
+
+Every contribution goes toward the PC build and helps me build bigger and better projects.
+
 ---
 
 ⭐ Thanks for visiting my profile!
