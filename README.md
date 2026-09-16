@@ -1,8 +1,8 @@
 # Hi 👋 I'm Rishi Banota
 
-<p align="center">
+<!-- <p align="center">
   <img src="./github-banner.png" alt="Rishi Banota — Python · Android · Cloudflare Workers · AI & Automation" width="100%"/>
-</p>
+</p> -->
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1200&color=00C2FF&center=true&vCenter=true&width=650&lines=Python+Developer;Android+Developer;Open+Source+Builder;Cloudflare+Workers+Enthusiast;Always+Learning+New+Things!" />
