@@ -9,12 +9,14 @@
 </p>
 
 <p align="center">
+  <a href="https://rishibanota.github.io/rishibanota/"><img src="https://img.shields.io/badge/Interactive_Portfolio-Live_Site-00FFA3?style=for-the-badge&logo=githubpages&logoColor=black"/></a>
   <a href="https://toolmint.rishibanota.workers.dev"><img src="https://img.shields.io/badge/ToolMint-Live_Site-F38020?style=for-the-badge&logo=cloudflare&logoColor=white"/></a>
   <a href="mailto:rishibanota837@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 </p>
 
 ## 🚀 About Me
 
+- 🌐 **Live Portfolio & Project Directory:** [rishibanota.github.io/rishibanota](https://rishibanota.github.io/rishibanota/)
 - 🎓 BE IT Student
 - 🐍 Python Developer
 - 📱 Android App Developer

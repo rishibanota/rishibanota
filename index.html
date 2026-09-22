@@ -3,159 +3,2201 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Rishi Banota — Python Dev · Open to Internships</title>
+<title>Rishi Banota — Developer, Tool Builder &amp; Open-Source Creator</title>
+<meta name="description" content="Portfolio of Rishi Banota — Creator of Toolmint (122+ tools), Code Arcade, TryKaro, Bugseer, AI automation utilities, Android apps, and Roblox games." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#05060a; --bg2:#0b0f1a; --neon:#00ffa3; --neon2:#7b5cff;
-    --txt:#e7ecf5; --dim:#8a93a6; --card:rgba(255,255,255,.04);
-    --border:rgba(0,255,163,.18);
+  :root {
+    --bg: #05070e;
+    --bg-surface: #0a0e1c;
+    --bg-card: #0d1326;
+    --bg-card-hover: #121a35;
+    --neon: #00ffa3;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #8b5cf6;
+    --neon-gold: #ffb830;
+    --txt: #f0f4fc;
+    --txt-muted: #8c9bb5;
+    --border: rgba(0, 255, 163, 0.16);
+    --border-hover: rgba(0, 255, 163, 0.45);
+    --tree-line: rgba(0, 240, 255, 0.22);
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
-    background:radial-gradient(1200px 600px at 80% -10%,rgba(123,92,255,.18),transparent 60%),
-               radial-gradient(900px 500px at -10% 20%,rgba(0,255,163,.12),transparent 55%),
-               var(--bg);
-    color:var(--txt); min-height:100vh; overflow-x:hidden;
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  /* Ultra-smooth high-performance body with static ambient gradients */
+  body {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    background-color: var(--bg);
+    background-image:
+      radial-gradient(900px 450px at 80% -5%, rgba(139, 92, 246, 0.18), transparent 60%),
+      radial-gradient(800px 450px at -10% 20%, rgba(0, 255, 163, 0.12), transparent 55%),
+      radial-gradient(750px 400px at 50% 80%, rgba(0, 240, 255, 0.1), transparent 60%);
+    color: var(--txt);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
-  /* animated grid bg */
-  body::before{
-    content:""; position:fixed; inset:-50%; z-index:0; opacity:.25;
-    background-image:linear-gradient(var(--border) 1px,transparent 1px),
-                     linear-gradient(90deg,var(--border) 1px,transparent 1px);
-    background-size:42px 42px; transform:perspective(400px) rotateX(60deg);
-    animation:grid 18s linear infinite; pointer-events:none;
+
+  /* Lightweight static grid overlay — zero GPU repainting lag */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.12;
+    background-image:
+      linear-gradient(rgba(0, 255, 163, 0.15) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 163, 0.15) 1px, transparent 1px);
+    background-size: 36px 36px;
+    pointer-events: none;
   }
-  @keyframes grid{to{background-position:0 42px,42px 0}}
-  .wrap{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:28px 20px 80px}
 
-  /* open-to-work banner */
-  .banner{
-    position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;justify-content:center;
-    background:linear-gradient(90deg,rgba(0,255,163,.16),rgba(123,92,255,.16));
-    border:1px solid var(--border);border-radius:0 0 14px 14px;padding:10px 14px;
-    font-size:13px;letter-spacing:.5px;backdrop-filter:blur(8px);
+  /* Intro Screen Overlay */
+  #introOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #04060b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .dot{width:9px;height:9px;border-radius:50%;background:var(--neon);box-shadow:0 0 12px var(--neon);animation:pulse 1.4s infinite}
-  @keyframes pulse{50%{opacity:.35;transform:scale(.7)}}
+  #introOverlay.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+  }
+  .intro-terminal {
+    width: 90%;
+    max-width: 480px;
+    background: #0a0f1d;
+    border: 1px solid rgba(0, 255, 163, 0.3);
+    border-radius: 14px;
+    box-shadow: 0 0 50px rgba(0, 255, 163, 0.15);
+    overflow: hidden;
+    padding: 24px;
+    font-size: 13px;
+  }
+  .intro-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .intro-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .intro-dot.red { background: #ff5f56; }
+  .intro-dot.yellow { background: #ffbd2e; }
+  .intro-dot.green { background: #27c93f; }
+  .intro-title {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--txt-muted);
+    letter-spacing: 1px;
+  }
+  .intro-log {
+    color: var(--neon-cyan);
+    margin-bottom: 8px;
+    min-height: 20px;
+    font-family: inherit;
+  }
+  .intro-progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 14px;
+    position: relative;
+  }
+  .intro-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon), var(--neon-cyan));
+    border-radius: 999px;
+    transition: width 0.15s ease-out;
+    box-shadow: 0 0 10px var(--neon);
+  }
+  .intro-skip-hint {
+    margin-top: 18px;
+    font-size: 11.5px;
+    color: var(--txt-muted);
+    text-align: center;
+    cursor: pointer;
+  }
+  .intro-skip-hint:hover { color: var(--neon); }
 
-  header{padding:54px 0 30px}
-  .tag{color:var(--neon);font-size:13px;letter-spacing:2px;text-transform:uppercase}
-  h1{font-size:clamp(34px,7vw,62px);line-height:1.02;margin:10px 0;
-     background:linear-gradient(90deg,#fff,var(--neon) 60%,var(--neon2));
-     -webkit-background-clip:text;background-clip:text;color:transparent}
-  .typed{color:var(--dim);font-size:15px;min-height:22px}
-  .cursor{display:inline-block;width:9px;background:var(--neon);animation:blink 1s steps(1) infinite}
-  @keyframes blink{50%{opacity:0}}
+  /* Page Wrapper with staggered reveal animation */
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 22px 100px;
+    animation: pageReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  @keyframes pageReveal {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-  .cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:26px}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;
-        transition:.25s;position:relative;overflow:hidden}
-  .card:hover{transform:translateY(-4px);border-color:var(--neon);box-shadow:0 10px 40px rgba(0,255,163,.12)}
-  .card h3{font-size:13px;color:var(--neon);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
-  .card p,.card li{color:var(--dim);font-size:13px;line-height:1.6;list-style:none}
-  .pill{display:inline-block;background:rgba(0,255,163,.08);border:1px solid var(--border);
-        border-radius:999px;padding:3px 10px;margin:3px 3px 0 0;font-size:11px;color:var(--txt)}
+  /* Sticky Top Status Bar */
+  .status-bar {
+    position: sticky;
+    top: 14px;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: #090e1d;
+    border: 1px solid rgba(0, 255, 163, 0.22);
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-size: 12.5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+  .status-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pulse-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--neon);
+    box-shadow: 0 0 12px var(--neon);
+    animation: pulse 1.6s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(0.7); }
+  }
+  .status-nav {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .status-nav a {
+    color: var(--txt-muted);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.2s;
+  }
+  .status-nav a:hover {
+    color: var(--neon);
+  }
 
-  section{margin-top:46px}
-  h2{font-size:20px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
-  h2::before{content:"";width:18px;height:2px;background:var(--neon);box-shadow:0 0 10px var(--neon)}
+  /* Header Section */
+  header {
+    padding: 46px 0 28px;
+  }
+  .handle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--neon);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(34px, 6.5vw, 64px);
+    line-height: 1.05;
+    margin: 12px 0 14px;
+    background: linear-gradient(90deg, #ffffff 15%, var(--neon) 55%, var(--neon-cyan) 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+  }
 
-  .proj{display:grid;gap:12px}
-  .proj a{text-decoration:none;color:var(--txt);background:var(--card);border:1px solid var(--border);
-          border-radius:14px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;
-          transition:.2s}
-  .proj a:hover{border-color:var(--neon2);transform:translateX(6px)}
-  .proj small{color:var(--dim)}
+  .typed-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 255, 163, 0.2);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 14.5px;
+    margin-bottom: 16px;
+  }
+  .prompt-char { color: var(--neon-cyan); font-weight: 700; }
+  .typed-text { color: #ffffff; font-weight: 600; min-width: 140px; }
+  .blinking-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--neon);
+    animation: blink 1s steps(1) infinite;
+    box-shadow: 0 0 8px var(--neon);
+  }
+  @keyframes blink { 50% { opacity: 0; } }
 
-  .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-  .links a{text-decoration:none;color:var(--txt);border:1px solid var(--border);border-radius:10px;
-           padding:9px 14px;font-size:13px;transition:.2s}
-  .links a:hover{background:var(--neon);color:#05060a;border-color:var(--neon);font-weight:700}
+  .bio {
+    color: var(--txt-muted);
+    max-width: 800px;
+    font-size: 14.5px;
+    line-height: 1.75;
+  }
+  .bio b { color: var(--txt); }
 
-  footer{margin-top:60px;text-align:center;color:var(--dim);font-size:12px;line-height:1.8}
-  .glow{color:var(--neon)}
+  /* Metrics Ribbon */
+  .metrics-ribbon {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 26px;
+  }
+  .metric-card {
+    background: linear-gradient(145deg, #10162a, #0b0f1e);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .metric-card:hover {
+    border-color: var(--neon);
+    transform: translateY(-2px);
+  }
+  .metric-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .metric-label {
+    font-size: 11px;
+    color: var(--txt-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Info Cards */
+  .cards-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-top: 24px;
+  }
+  .info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .info-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--neon);
+  }
+  .info-card h3 {
+    font-size: 12px;
+    color: var(--neon);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .info-card p {
+    color: var(--txt-muted);
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+  .pill-tag {
+    display: inline-block;
+    background: rgba(0, 255, 163, 0.08);
+    border: 1px solid rgba(0, 255, 163, 0.22);
+    border-radius: 999px;
+    padding: 3px 9px;
+    margin: 3px 3px 0 0;
+    font-size: 11.5px;
+    color: var(--txt);
+    transition: background 0.15s;
+  }
+  .pill-tag:hover {
+    background: rgba(0, 255, 163, 0.2);
+    color: #fff;
+  }
+
+  /* Section Title */
+  section { margin-top: 58px; }
+  .section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 12px;
+  }
+  h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(22px, 3.8vw, 28px);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: -0.5px;
+  }
+  h2::before {
+    content: "";
+    width: 13px;
+    height: 13px;
+    border-radius: 3px;
+    background: var(--neon);
+    box-shadow: 0 0 10px var(--neon);
+  }
+  .section-sub {
+    color: var(--txt-muted);
+    font-size: 13px;
+  }
+
+  /* Flagship Projects Grid */
+  .flagships-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 20px;
+  }
+  .flagship-box {
+    position: relative;
+    background: linear-gradient(165deg, #11172c, #0a0e1c);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+    overflow: hidden;
+  }
+  .flagship-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--neon), var(--neon-cyan), var(--neon-purple));
+    opacity: 0.6;
+  }
+  .flagship-box:hover {
+    transform: translateY(-4px);
+    border-color: var(--neon);
+    box-shadow: 0 12px 35px rgba(0, 255, 163, 0.12);
+  }
+  .flagship-box:hover::before { opacity: 1; }
+
+  .flagship-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    width: fit-content;
+  }
+  .badge-toolmint { background: rgba(255, 184, 48, 0.16); color: #ffb830; border: 1px solid rgba(255, 184, 48, 0.35); }
+  .badge-arcade { background: rgba(0, 255, 163, 0.16); color: #00ffa3; border: 1px solid rgba(0, 255, 163, 0.35); }
+  .badge-trykaro { background: rgba(139, 92, 246, 0.18); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.4); }
+
+  .flagship-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .flagship-desc {
+    font-size: 13.5px;
+    color: var(--txt-muted);
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+  .flagship-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 22px;
+  }
+  .flagship-tag {
+    font-size: 11px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--txt);
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+
+  .flagship-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .btn-primary-redirect {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    background: linear-gradient(90deg, rgba(0, 255, 163, 0.15), rgba(0, 240, 255, 0.15));
+    border: 1px solid var(--neon);
+    color: var(--neon);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+  }
+  .btn-primary-redirect:hover {
+    background: var(--neon);
+    color: #05070f;
+    box-shadow: 0 0 16px rgba(0, 255, 163, 0.35);
+    transform: translateY(-2px);
+  }
+  .btn-primary-redirect svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.2s;
+  }
+  .btn-primary-redirect:hover svg {
+    transform: translate(2px, -2px);
+  }
+
+  .btn-secondary-repo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--txt-muted);
+    font-size: 12.5px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-secondary-repo:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+  }
+
+  /* Tree Directory Container */
+  .tree-shell {
+    background: #090e1c;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Quick Category Filter Pills */
+  .category-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .filter-pill {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--txt-muted);
+    font-family: inherit;
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .filter-pill:hover {
+    background: rgba(0, 240, 255, 0.1);
+    border-color: var(--neon-cyan);
+    color: var(--txt);
+  }
+  .filter-pill.active {
+    background: rgba(0, 255, 163, 0.15);
+    border-color: var(--neon);
+    color: var(--neon);
+    font-weight: 700;
+  }
+
+  /* Tree Toolbar */
+  .tree-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed rgba(0, 240, 255, 0.2);
+  }
+  .tree-prompt-title {
+    font-size: 13px;
+    color: var(--neon-cyan);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+  }
+  .tree-search-box {
+    flex: 1;
+    max-width: 420px;
+    display: flex;
+    position: relative;
+  }
+  .tree-search-input {
+    width: 100%;
+    background: #050812;
+    border: 1px solid rgba(0, 240, 255, 0.25);
+    border-radius: 8px;
+    padding: 8px 14px 8px 34px;
+    color: var(--txt);
+    font-family: inherit;
+    font-size: 12.5px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .tree-search-input:focus {
+    border-color: var(--neon);
+  }
+  .tree-search-icon {
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    color: var(--txt-muted);
+    pointer-events: none;
+  }
+  .tree-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  .btn-tree-tool {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--txt);
+    font-family: inherit;
+    font-size: 11.5px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-tree-tool:hover {
+    background: rgba(0, 255, 163, 0.15);
+    border-color: var(--neon);
+    color: var(--neon);
+  }
+
+  /* Tree List & Folders */
+  .tree-list { list-style: none; }
+  .folder-block { margin-bottom: 12px; }
+  .folder-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.15s;
+  }
+  .folder-row:hover {
+    background: rgba(0, 240, 255, 0.08);
+    border-color: rgba(0, 240, 255, 0.25);
+  }
+  .folder-chevron {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    transition: transform 0.2s ease;
+    color: var(--neon-cyan);
+    font-size: 11px;
+    line-height: 14px;
+    text-align: center;
+  }
+  .folder-block.open > .folder-row .folder-chevron {
+    transform: rotate(90deg);
+  }
+  .folder-glyph { font-size: 15px; }
+  .folder-title {
+    font-weight: 700;
+    font-size: 13.5px;
+    color: #ffffff;
+  }
+  .folder-counter {
+    font-size: 11px;
+    color: var(--txt-muted);
+    background: #050814;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-left: auto;
+  }
+
+  /* Branch Lines */
+  .folder-content {
+    list-style: none;
+    position: relative;
+    padding-left: 26px;
+    margin-top: 6px;
+    display: none;
+  }
+  .folder-block.open > .folder-content {
+    display: block;
+  }
+  .folder-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 14px;
+    left: 14px;
+    width: 1px;
+    background: var(--tree-line);
+  }
+
+  /* File Item Node */
+  .file-item {
+    position: relative;
+    padding: 9px 12px 9px 16px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .file-item::before {
+    content: "├──";
+    position: absolute;
+    left: -18px;
+    top: 14px;
+    font-size: 11px;
+    color: var(--tree-line);
+  }
+  .file-item:last-child::before {
+    content: "└──";
+  }
+  .file-item:hover {
+    background: rgba(0, 255, 163, 0.04);
+    border-color: rgba(0, 255, 163, 0.3);
+    transform: translateX(3px);
+  }
+
+  .file-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .file-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .file-icon { font-size: 14px; }
+  .file-name {
+    font-weight: 700;
+    font-size: 13.5px;
+    color: #ffffff;
+  }
+  .file-actions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .redirect-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: var(--neon);
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 6px;
+    background: rgba(0, 255, 163, 0.09);
+    border: 1px solid rgba(0, 255, 163, 0.28);
+    transition: background 0.15s, color 0.15s;
+  }
+  .redirect-chip:hover {
+    background: var(--neon);
+    color: #05070f;
+  }
+  .redirect-chip.secondary {
+    color: var(--neon-cyan);
+    background: rgba(0, 240, 255, 0.09);
+    border-color: rgba(0, 240, 255, 0.28);
+  }
+  .redirect-chip.secondary:hover {
+    background: var(--neon-cyan);
+    color: #05070f;
+  }
+
+  .file-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    font-size: 12px;
+  }
+  .meta-how {
+    color: var(--neon-gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .meta-how::before {
+    content: "🛠️ Stack:";
+    font-size: 11px;
+    opacity: 0.8;
+  }
+  .meta-use {
+    color: var(--txt-muted);
+    line-height: 1.5;
+  }
+  .meta-use::before {
+    content: "🎯 Use:";
+    color: var(--neon-cyan);
+    font-size: 11px;
+    margin-right: 4px;
+  }
+
+  /* Subtree Branch */
+  .subfolder-block {
+    margin-top: 8px;
+    margin-bottom: 6px;
+  }
+  .subfolder-content {
+    list-style: none;
+    position: relative;
+    padding-left: 24px;
+    margin-top: 6px;
+    display: none;
+  }
+  .subfolder-block.open > .subfolder-content {
+    display: block;
+  }
+  .subfolder-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 12px;
+    left: 12px;
+    width: 1px;
+    background: var(--tree-line);
+  }
+
+  /* Workstation PC Build Section */
+  .pc-workstation-card {
+    position: relative;
+    background: linear-gradient(135deg, #150f28, #0a0d1e);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 60px;
+    overflow: hidden;
+  }
+  .pc-badge-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(139, 92, 246, 0.2);
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    color: #c4b5fd;
+    font-size: 11.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+  .pc-layout {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 26px;
+    align-items: center;
+  }
+  @media (max-width: 800px) {
+    .pc-layout { grid-template-columns: 1fr; }
+  }
+  .pc-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(20px, 4vw, 30px);
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .pc-text {
+    color: var(--txt-muted);
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 660px;
+  }
+  .pc-text strong { color: var(--txt); }
+  .pc-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn-support-pc {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    background: linear-gradient(90deg, #8b5cf6, #00ffa3);
+    color: #05070f;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 14px 26px;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-support-pc:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 255, 163, 0.4);
+  }
+  .btn-idea-email {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: var(--txt);
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    transition: background 0.2s;
+  }
+  .btn-idea-email:hover {
+    background: rgba(255, 255, 255, 0.14);
+  }
+
+  /* Connect Section */
+  .social-links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+  }
+  .social-btn {
+    text-decoration: none;
+    color: var(--txt);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: 13.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+  }
+  .social-btn:hover {
+    background: var(--neon);
+    color: #05070f;
+    border-color: var(--neon);
+    font-weight: 700;
+    transform: translateY(-2px);
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 70px;
+    text-align: center;
+    color: var(--txt-muted);
+    font-size: 12.5px;
+    line-height: 1.8;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 30px;
+  }
+  .brand-glow { color: var(--neon); font-weight: 700; }
+  .visitor-counter { margin-top: 14px; opacity: 0.85; }
 </style>
 </head>
 <body>
-  <div class="banner">
-    <span class="dot"></span>
-    <span><b class="glow">OPEN TO INTERNSHIPS &amp; JOB OPPORTUNITIES</b> — Python · Automation · Trading Systems (WFH / Mumbai)</span>
+
+  <!-- Sleek Cyber Bootloader Intro Overlay -->
+  <div id="introOverlay" onclick="dismissIntro()">
+    <div class="intro-terminal">
+      <div class="intro-header">
+        <span class="intro-dot red"></span>
+        <span class="intro-dot yellow"></span>
+        <span class="intro-dot green"></span>
+        <span class="intro-title">RISHI_OS // BOOT_SEQ</span>
+      </div>
+      <div class="intro-log" id="introLog">&gt; INITIALIZING PORTFOLIO_CORE...</div>
+      <div class="intro-progress-bar">
+        <div class="intro-progress-fill" id="introProgress"></div>
+      </div>
+      <div class="intro-skip-hint">[Click anywhere to skip boot sequence]</div>
+    </div>
   </div>
 
   <div class="wrap">
-    <header>
-      <div class="tag">// rishibanota</div>
-      <h1>Rishi Rajesh Banota</h1>
-      <div class="typed">Python Developer<span class="cursor">&nbsp;</span></div>
-      <p style="color:var(--dim);max-width:620px;margin-top:14px;font-size:14px;line-height:1.7">
-        B.E. IT (3rd Year) building real automation: trading bots, scrapers, AI tools &amp; Flutter apps.
-        I ship things that actually run — not tutorials. Currently looking for an internship to build on a real team.
-      </p>
-    </header>
-
-    <div class="cards">
-      <div class="card">
-        <h3>Education</h3>
-        <p>B.E. Information Technology<br/>SSJCOE, Dombivli (E), Mumbai<br/>2024 – 2028</p>
+    <!-- Top Sticky Bar -->
+    <div class="status-bar">
+      <div class="status-left">
+        <span class="pulse-dot"></span>
+        <span><b style="color:var(--neon)">OPEN TO INTERNSHIPS &amp; DEV ROLES</b> &bull; Python &middot; Automation &middot; Full-Stack &middot; Mumbai / Remote</span>
       </div>
-      <div class="card">
-        <h3>Skills</h3>
-        <p>
-          <span class="pill">Python</span><span class="pill">Java</span><span class="pill">Flutter</span>
-          <span class="pill">React/Node</span><span class="pill">Flask</span><span class="pill">FastAPI</span>
-          <span class="pill">Selenium</span><span class="pill">Playwright</span><span class="pill">MySQL</span><span class="pill">MongoDB</span>
-        </p>
-      </div>
-      <div class="card">
-        <h3>What I want</h3>
-        <p>🌱 Internship / freelance dev role<br/>💻 Python · automation · trading systems<br/>📍 WFH<br/>🚀 Building in public on X + GitHub</p>
+      <div class="status-nav">
+        <a href="#flagships">Flagships</a>
+        <a href="#tree">Project Tree</a>
+        <a href="#pc-build">Workstation</a>
+        <a href="#connect">Connect</a>
       </div>
     </div>
 
-    <section>
-      <h2>Projects</h2>
-      <div class="proj">
-        <a href="https://github.com/rishibanota/Delta-Trader-Bot"><span>📈 Delta Bar Trader Bot</span><small>Python · Delta API · RSI/EMA (private)</small></a>
-        <a href="https://github.com/rishibanota/AI-Youtube-Video-Generator"><span>🎬 AI YouTube Shorts Generator</span><small>Zero-API faceless video tool</small></a>
-        <a href="https://github.com/rishibanota/NSE-Scraper-App"><span>📊 NSE Scraper App</span><small>Live stock data scraper</small></a>
-        <a href="https://github.com/rishibanota/Bugseer"><span>🐞 Bugseer</span><small>Issue tracker · top-starred repo</small></a>
+    <!-- Main Header -->
+    <header>
+      <div class="handle">// rishibanota</div>
+      <h1>Rishi Rajesh Banota</h1>
+      
+      <div class="typed-box">
+        <span class="prompt-char">&gt;</span>
+        <span class="typed-text">Python Developer</span>
+        <span class="blinking-cursor"></span>
       </div>
-    </section>
 
-    <section>
-      <h2>Connect</h2>
-      <div class="links">
-        <a href="https://github.com/rishibanota">GitHub</a>
-        <a href="https://www.linkedin.com/in/rishi-banota-584924417">LinkedIn</a>
-        <a href="https://x.com/BanotaRish87559">X (Twitter)</a>
-        <a href="https://leetcode.com/u/rishibanota/">LeetCode</a>
-        <a href="mailto:rishibanota837@gmail.com">Email</a>
-      </div>
-    </section>
-
-    <footer>
-      <p>Built by <span class="glow">Rishi Banota</span> · open to work · 2026</p>
-      <p>“Distribution beats perfection. Ship daily.”</p>
-      <p style="margin-top:10px">
-        <img src="https://visitor-badge.laobi.icu/badge?page_id=rishibanota.portfolio" alt="visitors" />
+      <p class="bio">
+        <b>B.E. Information Technology (3rd Year, SSJCOE Mumbai)</b>.
+        Software builder focused on production utilities, edge computing, automation bots, and games.
+        Creator of <b>Toolmint</b> (122+ tools), <b>Code Arcade</b>, and <b>TryKaro</b>.
+        I build software with zero bloat, maximum efficiency, and real utility.
       </p>
+
+      <!-- Key Metrics Ribbon -->
+      <div class="metrics-ribbon">
+        <div class="metric-card">
+          <div class="metric-num"><span style="color:var(--neon-gold)">122+</span> 🛠️</div>
+          <div class="metric-label">Micro-tools on Toolmint</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num"><span style="color:var(--neon-cyan)">30+</span> 📦</div>
+          <div class="metric-label">Repositories Shipped</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num"><span style="color:var(--neon)">9</span> 🎮</div>
+          <div class="metric-label">Roblox Experiences</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num"><span style="color:var(--neon-purple)">100+</span> 🛍️</div>
+          <div class="metric-label">Deal Stores Indexed</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Info Grid -->
+    <div class="cards-grid">
+      <div class="info-card">
+        <h3>🎓 Education</h3>
+        <p><b>B.E. Information Technology</b><br/>SSJCOE, Dombivli (E), Mumbai<br/><span style="color:var(--txt-muted)">2024 – 2028 · Mumbai University</span></p>
+      </div>
+      <div class="info-card">
+        <h3>🛠️ Core Tech Stack</h3>
+        <p>
+          <span class="pill-tag">Python</span><span class="pill-tag">FastAPI / Flask</span><span class="pill-tag">Cloudflare Workers</span>
+          <span class="pill-tag">JavaScript / React</span><span class="pill-tag">Android / Java</span><span class="pill-tag">Luau / Roblox</span>
+          <span class="pill-tag">Playwright / Scrapers</span><span class="pill-tag">SQLite / MySQL</span>
+        </p>
+      </div>
+      <div class="info-card">
+        <h3>🌱 Career Goals</h3>
+        <p>
+          💼 Seeking Internship or Junior Developer Role<br/>
+          ⚡ Python, AI Agent Tools &amp; Automation Pipelines<br/>
+          📍 Mumbai / WFH Remote<br/>
+          🚀 Consistently building and shipping in public
+        </p>
+      </div>
+    </div>
+
+    <!-- Flagship Projects Section -->
+    <section id="flagships">
+      <div class="section-head">
+        <div>
+          <h2>Featured Flagships</h2>
+          <span class="section-sub">High-impact platforms serving thousands of daily use-cases</span>
+        </div>
+      </div>
+
+      <div class="flagships-grid">
+        <!-- 1. Toolmint -->
+        <div class="flagship-box">
+          <div>
+            <span class="flagship-badge badge-toolmint">⚡ 122+ Tools Active</span>
+            <div class="flagship-title">Toolmint</div>
+            <p class="flagship-desc">
+              All-in-one suite offering 122+ practical, fast tools designed to simplify your everyday digital tasks.
+              Calculators, converters, text manipulation, file utilities, encoders, and productivity helpers running instantly at the edge.
+            </p>
+            <div class="flagship-tags">
+              <span class="flagship-tag">Cloudflare Workers</span>
+              <span class="flagship-tag">Edge KV</span>
+              <span class="flagship-tag">Zero Bloat</span>
+              <span class="flagship-tag">122+ Micro-tools</span>
+            </div>
+          </div>
+          <div class="flagship-actions">
+            <a href="https://toolmint.rishibanota.workers.dev/" target="_blank" rel="noopener noreferrer" class="btn-primary-redirect">
+              Launch Toolmint
+              <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Code Arcade -->
+        <div class="flagship-box">
+          <div>
+            <span class="flagship-badge badge-arcade">🎮 Gamified Learning</span>
+            <div class="flagship-title">Code Arcade</div>
+            <p class="flagship-desc">
+              Offline-first coding game collection turning programming concepts into fast-paced mini-games.
+              Learn by spotting bugs, predicting output, rebuilding algorithms, mastering binary, regex drills, and typing code under pressure.
+            </p>
+            <div class="flagship-tags">
+              <span class="flagship-tag">Next.js / React</span>
+              <span class="flagship-tag">Offline-First PWA</span>
+              <span class="flagship-tag">Algorithms &amp; Regex</span>
+              <span class="flagship-tag">Speed Typing</span>
+            </div>
+          </div>
+          <div class="flagship-actions">
+            <a href="https://code-arcade-psi.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-redirect">
+              Play Code Arcade
+              <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a href="https://github.com/rishibanota/Code-Arcade" target="_blank" rel="noopener noreferrer" class="btn-secondary-repo">
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. TryKaro -->
+        <div class="flagship-box">
+          <div>
+            <span class="flagship-badge badge-trykaro">🛍️ Smart Deal Scanner</span>
+            <div class="flagship-title">TryKaro</div>
+            <p class="flagship-desc">
+              Cross-store deal discovery platform scanning 40+ to 100+ stores.
+              Aggregates offers, evaluates discount depth and deal attractiveness, and surfaces verified bargains without jumping between dozens of tabs.
+            </p>
+            <div class="flagship-tags">
+              <span class="flagship-tag">Cloudflare Pages</span>
+              <span class="flagship-tag">Scraping Pipeline</span>
+              <span class="flagship-tag">Smart Sorting</span>
+              <span class="flagship-tag">100+ Stores</span>
+            </div>
+          </div>
+          <div class="flagship-actions">
+            <a href="https://trykaro.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn-primary-redirect">
+              Visit TryKaro
+              <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a href="https://github.com/rishibanota/TryKaro" target="_blank" rel="noopener noreferrer" class="btn-secondary-repo">
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Tree Section -->
+    <section id="tree">
+      <div class="section-head">
+        <div>
+          <h2>Interactive Projects Tree</h2>
+          <span class="section-sub">Directory of 30+ repositories, tools, and games &bull; Click folders to expand</span>
+        </div>
+      </div>
+
+      <div class="tree-shell">
+        <!-- Quick Category Filter Pills -->
+        <div class="category-filter-bar">
+          <button class="filter-pill active" onclick="filterCategory('all', this)">All Projects (30+)</button>
+          <button class="filter-pill" onclick="filterCategory('web', this)">🌐 Web &amp; Flagships</button>
+          <button class="filter-pill" onclick="filterCategory('ai', this)">🤖 AI, Automation &amp; CLI</button>
+          <button class="filter-pill" onclick="filterCategory('trading', this)">📈 Trading &amp; Finance</button>
+          <button class="filter-pill" onclick="filterCategory('mobile', this)">📱 Android &amp; Mobile</button>
+          <button class="filter-pill" onclick="filterCategory('roblox', this)">🎮 Roblox Games (9)</button>
+          <button class="filter-pill" onclick="filterCategory('education', this)">📚 Education &amp; Textbooks</button>
+        </div>
+
+        <!-- Tree Toolbar -->
+        <div class="tree-toolbar">
+          <div class="tree-prompt-title">
+            <span>💻</span>
+            <span>~/rishibanota/projects-tree</span>
+          </div>
+          <div class="tree-search-box">
+            <span class="tree-search-icon">🔍</span>
+            <input type="text" id="treeSearch" class="tree-search-input" placeholder="Search by name, tech stack, or purpose..." autocomplete="off" />
+          </div>
+          <div class="tree-buttons">
+            <button class="btn-tree-tool" onclick="expandAll()">[+] Expand All</button>
+            <button class="btn-tree-tool" onclick="collapseAll()">[-] Collapse All</button>
+          </div>
+        </div>
+
+        <!-- Tree Directory Content -->
+        <ul class="tree-list" id="projectTreeList">
+
+          <!-- 1. Web Platforms & SaaS -->
+          <li class="folder-block open" data-cat="web">
+            <div class="folder-row" onclick="toggleFolder(this)">
+              <span class="folder-chevron">&#9656;</span>
+              <span class="folder-glyph">📁</span>
+              <span class="folder-title">web-platforms/</span>
+              <span class="folder-counter">4 items</span>
+            </div>
+            <ul class="folder-content">
+              <!-- Toolmint -->
+              <li class="file-item" data-keywords="toolmint cloudflare workers tools calculators converters 122 web edge">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">⚡</span>
+                    <span class="file-name">Toolmint (122+ Tools Suite)</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://toolmint.rishibanota.workers.dev/" target="_blank" rel="noopener noreferrer" class="redirect-chip">Live Site ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Cloudflare Workers · Vanilla JavaScript · Edge KV</span>
+                  <span class="meta-use">All-in-one suite of 122+ calculators, converters, file inspection tools, encoders, and productivity utilities.</span>
+                </div>
+              </li>
+
+              <!-- Code Arcade -->
+              <li class="file-item" data-keywords="code arcade games coding learning pwa react nextjs offline algorithms regex">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">🎮</span>
+                    <span class="file-name">Code Arcade</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://code-arcade-psi.vercel.app/" target="_blank" rel="noopener noreferrer" class="redirect-chip">Live Game ↗</a>
+                    <a href="https://github.com/rishibanota/Code-Arcade" target="_blank" rel="noopener noreferrer" class="redirect-chip secondary">GitHub ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Next.js · React · Offline-first PWA · Web APIs</span>
+                  <span class="meta-use">Gamified coding mini-games: bug spotting, regex testing, binary puzzles, and typing real code under pressure.</span>
+                </div>
+              </li>
+
+              <!-- TryKaro -->
+              <li class="file-item" data-keywords="trykaro deals shopping discount store scraper price comparison aggregator">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">🛍️</span>
+                    <span class="file-name">TryKaro (Deal Discovery)</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://trykaro.pages.dev/" target="_blank" rel="noopener noreferrer" class="redirect-chip">Live Site ↗</a>
+                    <a href="https://github.com/rishibanota/TryKaro" target="_blank" rel="noopener noreferrer" class="redirect-chip secondary">GitHub ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Cloudflare Pages · Web Scraping &amp; Deal Ranking Engine</span>
+                  <span class="meta-use">Automated deal aggregation across 40+ to 100+ online stores for instant discount comparison.</span>
+                </div>
+              </li>
+
+              <!-- Crypto Stocks Scanner -->
+              <li class="file-item" data-keywords="crypto stocks scanner delta exchange public api tracker html javascript live">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">📊</span>
+                    <span class="file-name">Crypto Stocks Scanner</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://crypto-stock-scanner.vercel.app/" target="_blank" rel="noopener noreferrer" class="redirect-chip">Live App ↗</a>
+                    <a href="https://github.com/rishibanota/crypto-stocks-scanner" target="_blank" rel="noopener noreferrer" class="redirect-chip secondary">GitHub ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">HTML5 · JavaScript · Delta Exchange Public APIs</span>
+                  <span class="meta-use">Real-time crypto stocks price tracker and live market movement detector.</span>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- 2. AI, Automation & CLI DevTools -->
+          <li class="folder-block open" data-cat="ai">
+            <div class="folder-row" onclick="toggleFolder(this)">
+              <span class="folder-chevron">&#9656;</span>
+              <span class="folder-glyph">📁</span>
+              <span class="folder-title">ai-automation-cli-tools/</span>
+              <span class="folder-counter">7 tools</span>
+            </div>
+            <ul class="folder-content">
+              <!-- Bugseer -->
+              <li class="file-item" data-keywords="bugseer python static analysis local ml machine learning git devtools offline">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">🐞</span>
+                    <span class="file-name">Bugseer</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/Bugseer" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Python · Static Analysis · Git Intelligence · Local ML</span>
+                  <span class="meta-use">Offline bug-risk predictor for source code repos with zero telemetry, API keys, or cloud leaks.</span>
+                </div>
+              </li>
+
+              <!-- AI YouTube Video Generator -->
+              <li class="file-item" data-keywords="ai youtube video generator shorts python tts local synthesis google cloud key">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">🎬</span>
+                    <span class="file-name">AI YouTube Video Generator</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/AI-Youtube-Video-Generator" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Python · Local Video &amp; TTS Synthesizer · Google Cloud API</span>
+                  <span class="meta-use">Free, open-source local AI YouTube Shorts generator with automated YouTube channel publishing.</span>
+                </div>
+              </li>
+
+              <!-- YouTube Video Downloader FAT32 -->
+              <li class="file-item" data-keywords="youtube video downloader with fat32 support python yt-dlp ffmpeg bulk download">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">📥</span>
+                    <span class="file-name">YouTube Video Downloader (FAT32 Support)</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/Youtube-Video-Downloader-With-FAT32-Support" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Python · yt-dlp · FFmpeg · Pipe Streaming</span>
+                  <span class="meta-use">High-speed bulk YouTube downloader with FAT32 4GB chunk limit workaround for large files on external drives.</span>
+                </div>
+              </li>
+
+              <!-- remembrandt -->
+              <li class="file-item" data-keywords="remembrandt ai skills agent claude code cursor codex cli memory">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">🧠</span>
+                    <span class="file-name">remembrandt</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/remembrandt" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Python · AI Agent Skills Framework · Zero-Dependency CLI</span>
+                  <span class="meta-use">Memory and project context persistence drop-in skill for Claude Code, Cursor, Codex, and terminal agents.</span>
+                </div>
+              </li>
+
+              <!-- YouTube Summary Generator -->
+              <li class="file-item" data-keywords="youtube summary generator python transcription nlp ai multi-language">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">📝</span>
+                    <span class="file-name">YouTube Summary Generator</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/Youtube-Summary-Generator" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Python · NLP Transcription Engine · Multi-Language Parser</span>
+                  <span class="meta-use">Generates quick, short summaries of YouTube videos in any target language from transcript data.</span>
+                </div>
+              </li>
+
+              <!-- GDrive Folder Size -->
+              <li class="file-item" data-keywords="gdrive folder size google drive api cli python storage calculator">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">☁️</span>
+                    <span class="file-name">gdrive-folder-size</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/gdrive-folder-size" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Python · Google Drive API · CLI Utility</span>
+                  <span class="meta-use">Calculates total recursive storage size of any Google Drive folder with a single terminal command.</span>
+                </div>
+              </li>
+
+              <!-- Affiliate Links Generator -->
+              <li class="file-item" data-keywords="affiliate links generator python cli url marketing tag">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">🔗</span>
+                    <span class="file-name">Affiliate Links Generator</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/Affiliate-Links-Generator" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Python · CLI Tool</span>
+                  <span class="meta-use">Command-line utility for instant batch generation of tagged affiliate referral links.</span>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- 3. Trading & Financial Automation -->
+          <li class="folder-block open" data-cat="trading">
+            <div class="folder-row" onclick="toggleFolder(this)">
+              <span class="folder-chevron">&#9656;</span>
+              <span class="folder-glyph">📁</span>
+              <span class="folder-title">trading-bots-finance/</span>
+              <span class="folder-counter">4 projects</span>
+            </div>
+            <ul class="folder-content">
+              <!-- Delta Trader Bot -->
+              <li class="file-item" data-keywords="delta bar trader bot python algorithmic trading api rsi ema crypto">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">🤖</span>
+                    <span class="file-name">Delta Bar Trader Bot</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/Delta-Trader-Bot" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Python · Delta Exchange API · RSI &amp; EMA Indicators</span>
+                  <span class="meta-use">Algorithmic crypto trading bot executing momentum-based order execution.</span>
+                </div>
+              </li>
+
+              <!-- Trading Helper App -->
+              <li class="file-item" data-keywords="trading helper app finance market position calculator risk">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">🧮</span>
+                    <span class="file-name">Trading Helper App</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/Trading-Helper-App" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Financial Calculation Framework · Risk Models</span>
+                  <span class="meta-use">Companion app for traders to calculate risk-to-reward, lot sizing, and technical positioning.</span>
+                </div>
+              </li>
+
+              <!-- NSE Scraper App -->
+              <li class="file-item" data-keywords="nse scraper app python stock market equity live delivery intraday">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">📈</span>
+                    <span class="file-name">NSE Scraper App</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/NSE-Scraper-App" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Python · Market Data Scraping · Delivery Volume Analyzer</span>
+                  <span class="meta-use">Detects highest/lowest delivery stocks for Indian National Stock Exchange intraday setups.</span>
+                </div>
+              </li>
+
+              <!-- Offline Expense Tracker -->
+              <li class="file-item" data-keywords="offline expense tracker mobile finance budget spending sqlite">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">💰</span>
+                    <span class="file-name">Offline Expense Tracker</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/Offline-Expense-Tracker" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Android · Local SQLite · Privacy-First</span>
+                  <span class="meta-use">100% offline personal finance and expense manager with clear spending visualization.</span>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- 4. Android & Mobile Applications -->
+          <li class="folder-block open" data-cat="mobile">
+            <div class="folder-row" onclick="toggleFolder(this)">
+              <span class="folder-chevron">&#9656;</span>
+              <span class="folder-glyph">📁</span>
+              <span class="folder-title">android-mobile-apps/</span>
+              <span class="folder-counter">7 apps</span>
+            </div>
+            <ul class="folder-content">
+              <!-- Android Power ToolKit -->
+              <li class="file-item" data-keywords="android power toolkit hardware diagnostics battery sensor privacy no ads">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">📱</span>
+                    <span class="file-name">Android Power ToolKit</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/Android-Power-ToolKit" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Android SDK · System APIs · No Ads &amp; Zero Tracking</span>
+                  <span class="meta-use">Lightweight diagnostic toolkit monitoring battery health, device sensors, and memory.</span>
+                </div>
+              </li>
+
+              <!-- QR Barcode ToolKit -->
+              <li class="file-item" data-keywords="qr barcode toolkit scan generate colorize offline android zxing">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">🔲</span>
+                    <span class="file-name">QR &amp; Barcode ToolKit</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/QR-Barcode-ToolKit" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Android · ZXing Engine · Offline Processing</span>
+                  <span class="meta-use">Scan, generate, colorize, and maintain history for QR codes and barcodes offline.</span>
+                </div>
+              </li>
+
+              <!-- Draw on Screen with Laser -->
+              <li class="file-item" data-keywords="draw on screen with laser annotation pointer overlay canvas android">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">✏️</span>
+                    <span class="file-name">Draw On Screen with Laser</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/Draw-on-screen-with-laser" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Android System Overlay Window · Canvas API</span>
+                  <span class="meta-use">Draw shapes, freehand annotations, and project a virtual laser pointer over any screen.</span>
+                </div>
+              </li>
+
+              <!-- Crosshair Customizer Pro -->
+              <li class="file-item" data-keywords="crosshair customizer pro fps gaming overlay aim precision">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">🎯</span>
+                    <span class="file-name">Crosshair Customizer Pro</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/Crosshair-Customizer-Pro-App" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Android UI Overlay · Vector Graphics Renderer</span>
+                  <span class="meta-use">Floating customizable aiming crosshair overlay for mobile shooters and precision gaming.</span>
+                </div>
+              </li>
+
+              <!-- Offline Typing Practice -->
+              <li class="file-item" data-keywords="offline typing practice speed test analytics wpm keystrokes">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">⌨️</span>
+                    <span class="file-name">Offline Typing Practice App</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/Offline-Typing-Practice-App" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Modern Mobile UI · Keystroke &amp; WPM Analytics</span>
+                  <span class="meta-use">Master typing speed offline with multiple test modes, progress charts, and accuracy tracking.</span>
+                </div>
+              </li>
+
+              <!-- Study Timer With Pomodoro -->
+              <li class="file-item" data-keywords="study timer with pomodoro focus interval productivity offline">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">⏱️</span>
+                    <span class="file-name">Study Timer With Pomodoro</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/Study-Timer-With-Pomodoro" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Lightweight Timer Framework · Audio Notifications</span>
+                  <span class="meta-use">Distraction-free offline Pomodoro interval timer to boost study focus and work habits.</span>
+                </div>
+              </li>
+
+              <!-- Volume Changer App -->
+              <li class="file-item" data-keywords="volume changer app audio control utility sound">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">🔊</span>
+                    <span class="file-name">Volume Changer App</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/Volume-Changer-App" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Audio Management API · Hardware Controller</span>
+                  <span class="meta-use">Quick volume profile switcher and fine-grained sound level management utility.</span>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- 5. Roblox Games (Recursive Tree) -->
+          <li class="folder-block open" data-cat="roblox">
+            <div class="folder-row" onclick="toggleFolder(this)">
+              <span class="folder-chevron">&#9656;</span>
+              <span class="folder-glyph">📁</span>
+              <span class="folder-title">roblox-games/</span>
+              <span class="folder-counter">9 games + hub</span>
+            </div>
+            <ul class="folder-content">
+              <!-- Roblox Hub Repo -->
+              <li class="file-item" data-keywords="roblox games hub repo profile rishigamer20062 luau studio">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">📦</span>
+                    <span class="file-name">Roblox Games Portfolio Hub</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://www.roblox.com/users/2887606723/profile/" target="_blank" rel="noopener noreferrer" class="redirect-chip">Roblox Profile ↗</a>
+                    <a href="https://github.com/rishibanota/Roblox-Games" target="_blank" rel="noopener noreferrer" class="redirect-chip secondary">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Luau · Roblox Studio · Game Architecture</span>
+                  <span class="meta-use">Official directory and profile hub for all games developed under @rishigamer20062.</span>
+                </div>
+              </li>
+
+              <!-- Recursive playable experiences -->
+              <li class="subfolder-block open">
+                <div class="folder-row" onclick="toggleFolder(this)">
+                  <span class="folder-chevron">&#9656;</span>
+                  <span class="folder-glyph">🕹️</span>
+                  <span class="folder-title">playable-experiences/</span>
+                  <span class="folder-counter">9 live games</span>
+                </div>
+                <ul class="subfolder-content">
+                  <!-- Game 1 -->
+                  <li class="file-item" data-keywords="the ultimate tough obby 100 levels parkour roblox boss">
+                    <div class="file-header">
+                      <div class="file-title-wrap">
+                        <span class="file-icon">💥</span>
+                        <span class="file-name">The Ultimate Tough Obby (100 Levels! Of Glory)</span>
+                      </div>
+                      <div class="file-actions">
+                        <a href="https://www.roblox.com/games/94534771802315/The-Ultimate-Tough-Obby" target="_blank" rel="noopener noreferrer" class="redirect-chip">Play on Roblox ↗</a>
+                      </div>
+                    </div>
+                    <div class="file-meta">
+                      <span class="meta-how">Luau · Physics &amp; Obstacle Mechanics · Leaderboards</span>
+                      <span class="meta-use">Hardcore 100-level obstacle course with moving platforms, power-ups, rebirths, and boss battles.</span>
+                    </div>
+                  </li>
+
+                  <!-- Game 2 -->
+                  <li class="file-item" data-keywords="rising lava math challenge educational puzzle survival roblox">
+                    <div class="file-header">
+                      <div class="file-title-wrap">
+                        <span class="file-icon">🌋</span>
+                        <span class="file-name">Rising Lava Math Challenge</span>
+                      </div>
+                      <div class="file-actions">
+                        <a href="https://www.roblox.com/games/81699865114364/Rising-Lava-Math-Challenge" target="_blank" rel="noopener noreferrer" class="redirect-chip">Play on Roblox ↗</a>
+                      </div>
+                    </div>
+                    <div class="file-meta">
+                      <span class="meta-how">Luau · Procedural Math Engine · Dynamic Rising Lava</span>
+                      <span class="meta-use">Solve mental math puzzles rapidly to climb platforms and escape the rising molten lava.</span>
+                    </div>
+                  </li>
+
+                  <!-- Game 3 -->
+                  <li class="file-item" data-keywords="fruit collector tycoon harvest rise farming simulator biomes roblox">
+                    <div class="file-header">
+                      <div class="file-title-wrap">
+                        <span class="file-icon">🍎</span>
+                        <span class="file-name">Fruit Collector Tycoon: Harvest &amp; Rise!</span>
+                      </div>
+                      <div class="file-actions">
+                        <a href="https://www.roblox.com/games/137245464712714/Fruit-Collector-Tycoon-Harvest-Rise" target="_blank" rel="noopener noreferrer" class="redirect-chip">Play on Roblox ↗</a>
+                      </div>
+                    </div>
+                    <div class="file-meta">
+                      <span class="meta-how">Luau · Economy Simulation · DataStore Persistence</span>
+                      <span class="meta-use">Catch falling fruit, explore 7 unique biomes, purchase auto-collectors, and build a fruit empire.</span>
+                    </div>
+                  </li>
+
+                  <!-- Game 4 -->
+                  <li class="file-item" data-keywords="monster maze madness horror maze adventure roblox traps">
+                    <div class="file-header">
+                      <div class="file-title-wrap">
+                        <span class="file-icon">👿</span>
+                        <span class="file-name">Monster Maze Madness</span>
+                      </div>
+                      <div class="file-actions">
+                        <a href="https://www.roblox.com/games/89848727058798/Monster-Maze-Madness" target="_blank" rel="noopener noreferrer" class="redirect-chip">Play on Roblox ↗</a>
+                      </div>
+                    </div>
+                    <div class="file-meta">
+                      <span class="meta-how">Luau · AI Monster Pathfinding · Trap Generation</span>
+                      <span class="meta-use">Navigate dark maze labyrinths, outsmart roaming creatures, dodge traps, and escape.</span>
+                    </div>
+                  </li>
+
+                  <!-- Game 5 -->
+                  <li class="file-item" data-keywords="the floating carpet obby 130 levels magic carpet grappling hook roblox">
+                    <div class="file-header">
+                      <div class="file-title-wrap">
+                        <span class="file-icon">🧶</span>
+                        <span class="file-name">The Floating Carpet Obby ✨</span>
+                      </div>
+                      <div class="file-actions">
+                        <a href="https://www.roblox.com/games/82713324366697/The-Floating-Carpet-Obby" target="_blank" rel="noopener noreferrer" class="redirect-chip">Play on Roblox ↗</a>
+                      </div>
+                    </div>
+                    <div class="file-meta">
+                      <span class="meta-how">Luau · Custom Flight Physics · Grappling Hook Tools</span>
+                      <span class="meta-use">Glide across 130 aerial obstacle levels using magical flying carpets and mobility equipment.</span>
+                    </div>
+                  </li>
+
+                  <!-- Game 6 -->
+                  <li class="file-item" data-keywords="infinity road 7x challenge speed runner progression roblox aura">
+                    <div class="file-header">
+                      <div class="file-title-wrap">
+                        <span class="file-icon">⚡</span>
+                        <span class="file-name">Infinity Road: 7X Challenge</span>
+                      </div>
+                      <div class="file-actions">
+                        <a href="https://www.roblox.com/games/121933749648950/Infinity-Road-7X-Challenge" target="_blank" rel="noopener noreferrer" class="redirect-chip">Play on Roblox ↗</a>
+                      </div>
+                    </div>
+                    <div class="file-meta">
+                      <span class="meta-how">Luau · Velocity Multipliers · Aura Progression System</span>
+                      <span class="meta-use">Speedrunner game racing down infinite tracks, stacking up to 7x velocity buffs, and unlocking rare auras.</span>
+                    </div>
+                  </li>
+
+                  <!-- Game 7 -->
+                  <li class="file-item" data-keywords="free ugc items combat arena slap fighting roblox">
+                    <div class="file-header">
+                      <div class="file-title-wrap">
+                        <span class="file-icon">💪</span>
+                        <span class="file-name">[NEW UPDATE] Free UGC Items</span>
+                      </div>
+                      <div class="file-actions">
+                        <a href="https://www.roblox.com/games/81849831148777/Free-UGC-Items" target="_blank" rel="noopener noreferrer" class="redirect-chip">Play on Roblox ↗</a>
+                      </div>
+                    </div>
+                    <div class="file-meta">
+                      <span class="meta-how">Luau · Melee Combat System · Custom Emotes</span>
+                      <span class="meta-use">Combat battle arena: slap rivals, earn power points (PP), upgrade weapons, and unlock gear.</span>
+                    </div>
+                  </li>
+
+                  <!-- Game 8 -->
+                  <li class="file-item" data-keywords="scary monster island horror survival escape roblox">
+                    <div class="file-header">
+                      <div class="file-title-wrap">
+                        <span class="file-icon">🏝️</span>
+                        <span class="file-name">Scary Monster Island</span>
+                      </div>
+                      <div class="file-actions">
+                        <a href="https://www.roblox.com/games/70843642416018/Scary-Monster-Island" target="_blank" rel="noopener noreferrer" class="redirect-chip">Play on Roblox ↗</a>
+                      </div>
+                    </div>
+                    <div class="file-meta">
+                      <span class="meta-how">Luau · Terrain Lighting · Island Survival</span>
+                      <span class="meta-use">Atmospheric nighttime island survival: gather tools and escape creature encounters.</span>
+                    </div>
+                  </li>
+
+                  <!-- Game 9 -->
+                  <li class="file-item" data-keywords="last one standing party battle royale survival minigames roblox">
+                    <div class="file-header">
+                      <div class="file-title-wrap">
+                        <span class="file-icon">👑</span>
+                        <span class="file-name">Last One Standing</span>
+                      </div>
+                      <div class="file-actions">
+                        <a href="https://www.roblox.com/games/101731261854761/Last-One-Standing" target="_blank" rel="noopener noreferrer" class="redirect-chip">Play on Roblox ↗</a>
+                      </div>
+                    </div>
+                    <div class="file-meta">
+                      <span class="meta-how">Luau · Round-based Minigame Rotation · Elimination</span>
+                      <span class="meta-use">Chaotic party survival game with randomized maps until a single champion is left standing.</span>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <!-- 6. Educational Platforms & Textbooks -->
+          <li class="folder-block open" data-cat="education">
+            <div class="folder-row" onclick="toggleFolder(this)">
+              <span class="folder-chevron">&#9656;</span>
+              <span class="folder-glyph">📁</span>
+              <span class="folder-title">education-textbooks/</span>
+              <span class="folder-counter">9 items</span>
+            </div>
+            <ul class="folder-content">
+              <!-- Maharashtra HSC Board Textbooks -->
+              <li class="file-item" data-keywords="maharashtra hsc board textbooks science commerce arts 11th 12th offline">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">📚</span>
+                    <span class="file-name">Maharashtra HSC Board Textbooks (11th &amp; 12th)</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/Maharashtra-HSC-Board-Textbooks" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Android · PDF Reader Engine · Offline Library</span>
+                  <span class="meta-use">Free organized textbook portal for 11th &amp; 12th HSC students across Science, Commerce &amp; Arts.</span>
+                </div>
+              </li>
+
+              <!-- Multiplication Table App -->
+              <li class="file-item" data-keywords="multiplication table app math practice learning education students">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">✖️</span>
+                    <span class="file-name">Multiplication Table App</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://github.com/rishibanota/Multiplication-Table-App" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub Repo ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Interactive Math Framework · Educational Drills</span>
+                  <span class="meta-use">Helps students practice and master multiplication tables through instant feedback drills.</span>
+                </div>
+              </li>
+
+              <!-- 5th to 10th Standard Textbooks Subfolder -->
+              <li class="subfolder-block open">
+                <div class="folder-row" onclick="toggleFolder(this)">
+                  <span class="folder-chevron">&#9656;</span>
+                  <span class="folder-glyph">📖</span>
+                  <span class="folder-title">school-grade-textbooks (5th to 10th)/</span>
+                  <span class="folder-counter">7 links</span>
+                </div>
+                <ul class="subfolder-content">
+                  <!-- Main Blog Portal -->
+                  <li class="file-item" data-keywords="5th to 10th std textbooks blog download portal maharashtrahscbooks blogspot">
+                    <div class="file-header">
+                      <div class="file-title-wrap">
+                        <span class="file-icon">🌐</span>
+                        <span class="file-name">5th to 10th Std Textbooks Official Blog</span>
+                      </div>
+                      <div class="file-actions">
+                        <a href="https://maharashtrahscbooks.blogspot.com/" target="_blank" rel="noopener noreferrer" class="redirect-chip">Open Blog Portal ↗</a>
+                      </div>
+                    </div>
+                    <div class="file-meta">
+                      <span class="meta-how">Web &middot; Blogspot Educational Distribution</span>
+                      <span class="meta-use">Central web hub for students to download state board textbooks from 5th to 10th standard for free.</span>
+                    </div>
+                  </li>
+
+                  <!-- 10th Std Repo -->
+                  <li class="file-item" data-keywords="textbooks for 10th std ssc board maharashtra school">
+                    <div class="file-header">
+                      <div class="file-title-wrap">
+                        <span class="file-icon">📘</span>
+                        <span class="file-name">Textbooks For 10th Std (SSC)</span>
+                      </div>
+                      <div class="file-actions">
+                        <a href="https://github.com/rishibanota/Textbooks-For-10th-Std" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub ↗</a>
+                      </div>
+                    </div>
+                    <div class="file-meta">
+                      <span class="meta-how">Curated Educational Resource Repo</span>
+                      <span class="meta-use">Complete textbook collection for 10th standard Maharashtra state board.</span>
+                    </div>
+                  </li>
+
+                  <!-- 9th Std Repo -->
+                  <li class="file-item" data-keywords="textbooks for 9th std school maharashtra">
+                    <div class="file-header">
+                      <div class="file-title-wrap">
+                        <span class="file-icon">📘</span>
+                        <span class="file-name">Textbooks For 9th Std</span>
+                      </div>
+                      <div class="file-actions">
+                        <a href="https://github.com/rishibanota/Textbooks-For-9th-Std" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub ↗</a>
+                      </div>
+                    </div>
+                    <div class="file-meta">
+                      <span class="meta-how">Curated Educational Resource Repo</span>
+                      <span class="meta-use">Complete textbook collection for 9th standard students.</span>
+                    </div>
+                  </li>
+
+                  <!-- 8th Std Repo -->
+                  <li class="file-item" data-keywords="textbooks for 8th std school maharashtra">
+                    <div class="file-header">
+                      <div class="file-title-wrap">
+                        <span class="file-icon">📘</span>
+                        <span class="file-name">Textbooks For 8th Std</span>
+                      </div>
+                      <div class="file-actions">
+                        <a href="https://github.com/rishibanota/Textbooks-For-8th-Std" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub ↗</a>
+                      </div>
+                    </div>
+                    <div class="file-meta">
+                      <span class="meta-how">Curated Educational Resource Repo</span>
+                      <span class="meta-use">Complete textbook collection for 8th standard students.</span>
+                    </div>
+                  </li>
+
+                  <!-- 7th Std Repo -->
+                  <li class="file-item" data-keywords="textbooks for 7th std school maharashtra">
+                    <div class="file-header">
+                      <div class="file-title-wrap">
+                        <span class="file-icon">📘</span>
+                        <span class="file-name">Textbooks For 7th Std</span>
+                      </div>
+                      <div class="file-actions">
+                        <a href="https://github.com/rishibanota/Textbooks-For-7th-Std" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub ↗</a>
+                      </div>
+                    </div>
+                    <div class="file-meta">
+                      <span class="meta-how">Curated Educational Resource Repo</span>
+                      <span class="meta-use">Complete textbook collection for 7th standard students.</span>
+                    </div>
+                  </li>
+
+                  <!-- 6th Std Repo -->
+                  <li class="file-item" data-keywords="textbooks for 6th std school maharashtra">
+                    <div class="file-header">
+                      <div class="file-title-wrap">
+                        <span class="file-icon">📘</span>
+                        <span class="file-name">Textbooks For 6th Std</span>
+                      </div>
+                      <div class="file-actions">
+                        <a href="https://github.com/rishibanota/Textbooks-For-6th-Std" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub ↗</a>
+                      </div>
+                    </div>
+                    <div class="file-meta">
+                      <span class="meta-how">Curated Educational Resource Repo</span>
+                      <span class="meta-use">Complete textbook collection for 6th standard students.</span>
+                    </div>
+                  </li>
+
+                  <!-- 5th Std Repo -->
+                  <li class="file-item" data-keywords="textbooks for 5th std school maharashtra">
+                    <div class="file-header">
+                      <div class="file-title-wrap">
+                        <span class="file-icon">📘</span>
+                        <span class="file-name">Textbooks For 5th Std</span>
+                      </div>
+                      <div class="file-actions">
+                        <a href="https://github.com/rishibanota/Textbooks-For-5th-Std" target="_blank" rel="noopener noreferrer" class="redirect-chip">GitHub ↗</a>
+                      </div>
+                    </div>
+                    <div class="file-meta">
+                      <span class="meta-how">Curated Educational Resource Repo</span>
+                      <span class="meta-use">Complete textbook collection for 5th standard students.</span>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- Workstation & PC Build Campaign Card (Bottom) -->
+    <section id="pc-build">
+      <div class="pc-workstation-card">
+        <div class="pc-layout">
+          <div>
+            <span class="pc-badge-top">🖥️ Hardware Goal &amp; Workstation Upgrade</span>
+            <div class="pc-heading">Help Me Build My Development PC &amp; Outbid Websites</div>
+            <p class="pc-text">
+              My current laptop struggles under demanding engineering workloads — compiling large Android codebases,
+              running local AI models, training ML bug detectors, and rendering complex 3D environments in Roblox Studio.
+              I am raising funds for a dedicated high-performance development workstation to push software shipments even faster and build high-efficiency tools.
+            </p>
+            <p class="pc-text" style="margin-top:10px">
+              <strong>Support this journey:</strong> Every contribution directly funds the workstation hardware and enables bigger open-source projects!
+            </p>
+          </div>
+          <div class="pc-buttons">
+            <a href="https://build-me-a-pc.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-support-pc">
+              Help Me Build My PC →
+            </a>
+            <a href="mailto:rishibanota837@gmail.com?subject=Idea%20or%20Project%20Collaboration" class="btn-idea-email">
+              💡 Have an App Idea? Email Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect & Socials Section -->
+    <section id="connect">
+      <div class="section-head">
+        <div>
+          <h2>Connect &amp; Socials</h2>
+          <span class="section-sub">Always open for internship opportunities, freelance dev, or tech conversations</span>
+        </div>
+      </div>
+      <div class="social-links-grid">
+        <a href="https://github.com/rishibanota" target="_blank" rel="noopener noreferrer" class="social-btn">🐙 GitHub (@rishibanota)</a>
+        <a href="https://www.linkedin.com/in/rishi-banota-584924417" target="_blank" rel="noopener noreferrer" class="social-btn">💼 LinkedIn</a>
+        <a href="https://x.com/BanotaRish87559" target="_blank" rel="noopener noreferrer" class="social-btn">🐦 X / Twitter (@BanotaRish87559)</a>
+        <a href="https://leetcode.com/u/rishibanota/" target="_blank" rel="noopener noreferrer" class="social-btn">⚡ LeetCode</a>
+        <a href="https://www.roblox.com/users/2887606723/profile/" target="_blank" rel="noopener noreferrer" class="social-btn">🕹️ Roblox Profile</a>
+        <!-- Email named button only (No direct email exposed in UI text) -->
+        <a href="mailto:rishibanota837@gmail.com" class="social-btn">✉️ Email Me</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Built with passion &bull; <span class="brand-glow">Rishi Rajesh Banota</span> &bull; 2026</p>
+      <p style="color:var(--txt-muted);margin-top:4px">&ldquo;Distribution beats perfection. Ship daily.&rdquo;</p>
+      <div class="visitor-counter">
+        <img src="https://visitor-badge.laobi.icu/badge?page_id=rishibanota.portfolio" alt="Portfolio Visitors Counter" />
+      </div>
     </footer>
   </div>
 
+  <!-- Interactive Logic -->
   <script>
-    // typewriter effect
-    const roles=["Python Developer","Automation Engineer","Trading Systems Builder","Flutter App Maker","Open-Source Contributor"];
-    let r=0,w=0,del=false,el=document.querySelector(".typed");
-    function tick(){
-      const t=roles[r];
-      el.innerHTML=(del?t.slice(0,w--):t.slice(0,w++))+'<span class="cursor">&nbsp;</span>';
-      if(!del&&w===t.length){del=true;setTimeout(tick,1400);return}
-      if(del&&w===0){del=false;r=(r+1)%roles.length}
-      setTimeout(tick,del?45:90);
+    // 0. Sleek Intro Animation
+    const introOverlay = document.getElementById("introOverlay");
+    const introLog = document.getElementById("introLog");
+    const introProgress = document.getElementById("introProgress");
+
+    const bootSteps = [
+      { text: "> INITIALIZING RISHI_CORE v2.6...", pct: 20, wait: 450 },
+      { text: "> MOUNTING 30+ REPOSITORIES & DEVTOOLS...", pct: 45, wait: 450 },
+      { text: "> CONNECTING 122+ MICRO-TOOLS ON TOOLMINT...", pct: 70, wait: 450 },
+      { text: "> LOADING ROBLOX EXPERIENCES & APPS...", pct: 90, wait: 450 },
+      { text: "> STATUS: ONLINE // ACCESS GRANTED", pct: 100, wait: 550 }
+    ];
+
+    let currentStep = 0;
+    function runBootSeq() {
+      if (currentStep < bootSteps.length) {
+        const step = bootSteps[currentStep];
+        introLog.textContent = step.text;
+        introProgress.style.width = step.pct + "%";
+        currentStep++;
+        setTimeout(runBootSeq, step.wait);
+      } else {
+        setTimeout(dismissIntro, 600);
+      }
     }
-    tick();
+
+    function dismissIntro() {
+      if (!introOverlay.classList.contains("hidden")) {
+        introOverlay.classList.add("hidden");
+      }
+    }
+
+    // Run boot sequence on load
+    window.addEventListener("DOMContentLoaded", runBootSeq);
+
+    // 1. Dynamic Typewriter
+    const roles = [
+      "Python Developer",
+      "Full-Stack Automation Engineer",
+      "Creator of Toolmint (122+ Tools)",
+      "Android & Offline-First App Maker",
+      "Roblox Game Creator",
+      "Open-Source Contributor"
+    ];
+    let r = 0, c = 0, isDel = false;
+    const typedTextEl = document.querySelector(".typed-text");
+
+    function typeEffect() {
+      const cur = roles[r];
+      if (isDel) {
+        typedTextEl.textContent = cur.substring(0, c--);
+      } else {
+        typedTextEl.textContent = cur.substring(0, c++);
+      }
+
+      let delay = isDel ? 35 : 80;
+
+      if (!isDel && c === cur.length + 1) {
+        delay = 1800;
+        isDel = true;
+      } else if (isDel && c === 0) {
+        isDel = false;
+        r = (r + 1) % roles.length;
+        delay = 400;
+      }
+
+      setTimeout(typeEffect, delay);
+    }
+    typeEffect();
+
+    // 2. Folder toggle
+    function toggleFolder(row) {
+      const parent = row.parentElement;
+      parent.classList.toggle("open");
+    }
+
+    function expandAll() {
+      document.querySelectorAll(".folder-block, .subfolder-block").forEach(b => b.classList.add("open"));
+    }
+
+    function collapseAll() {
+      document.querySelectorAll(".folder-block, .subfolder-block").forEach(b => b.classList.remove("open"));
+    }
+
+    // 3. Category Filter Tabs
+    function filterCategory(cat, pill) {
+      document.querySelectorAll(".filter-pill").forEach(p => p.classList.remove("active"));
+      pill.classList.add("active");
+
+      const folders = document.querySelectorAll(".folder-block");
+      const searchInput = document.getElementById("treeSearch");
+      searchInput.value = ""; // reset text search on category filter click
+
+      folders.forEach(f => {
+        const fCat = f.getAttribute("data-cat");
+        if (cat === "all" || fCat === cat) {
+          f.style.display = "";
+          f.classList.add("open");
+          f.querySelectorAll(".file-item").forEach(item => item.style.display = "");
+        } else {
+          f.style.display = "none";
+        }
+      });
+    }
+
+    // 4. Live Search in Tree
+    const searchInput = document.getElementById("treeSearch");
+    searchInput.addEventListener("input", function(e) {
+      const q = e.target.value.toLowerCase().trim();
+      const items = document.querySelectorAll(".file-item");
+      const folders = document.querySelectorAll(".folder-block");
+      const subfolders = document.querySelectorAll(".subfolder-block");
+
+      // Reset category pills to "All" when user starts typing
+      if (q) {
+        document.querySelectorAll(".filter-pill").forEach(p => p.classList.remove("active"));
+        document.querySelector(".filter-pill").classList.add("active");
+        folders.forEach(f => {
+          f.style.display = "";
+          f.classList.add("open");
+        });
+        subfolders.forEach(sf => {
+          sf.style.display = "";
+          sf.classList.add("open");
+        });
+      } else {
+        items.forEach(it => it.style.display = "");
+        folders.forEach(f => f.style.display = "");
+        subfolders.forEach(sf => sf.style.display = "");
+        return;
+      }
+
+      items.forEach(it => {
+        const text = it.textContent.toLowerCase();
+        const kw = (it.getAttribute("data-keywords") || "").toLowerCase();
+        if (text.includes(q) || kw.includes(q)) {
+          it.style.display = "";
+        } else {
+          it.style.display = "none";
+        }
+      });
+
+      // Hide empty subfolders
+      subfolders.forEach(sf => {
+        const visibleSub = sf.querySelectorAll(".file-item:not([style*='display: none'])");
+        sf.style.display = visibleSub.length === 0 ? "none" : "";
+      });
+
+      // Hide empty main folders
+      folders.forEach(f => {
+        const visibleFiles = f.querySelectorAll(".file-item:not([style*='display: none'])");
+        f.style.display = visibleFiles.length === 0 ? "none" : "";
+      });
+    });
   </script>
 </body>
 </html>
