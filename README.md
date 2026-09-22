@@ -55,15 +55,6 @@
 
 </div>
 
-<div align="center">
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=rishibanota&bg_color=0d0d0d&color=F5A623&line=F5A623&point=ffffff&area=true&area_color=F5A623&hide_border=true" width="100%" />
-</div>
-
-## ◈ Trophies `🏆`
-
-<div align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=rishibanota&theme=darkhub&no-frame=true&row=1&column=7&margin-w=8" />
-</div>
 
 ## 🐍 Contributions
 
