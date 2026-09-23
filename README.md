@@ -34,11 +34,11 @@
 
 ## ⭐ Featured Projects
 
-- 💻 Bugseer
-- 🌐 ToolMint Website
-- 🛒 TryKaro
-- 🎮 Code Arcade
-- 💹 Crypto Stock Scanner
+- 💻 Bugseer (Bug Auditor)
+- 🌐 ToolMint Website (145+ Daily Use Tools)
+- 🛒 TryKaro (Search 40+ Stores in One Query)
+- 🎮 Code Arcade (Coding Game to Develop Coding Skills)
+- 💹 Crypto Stock Scanner (Delta Exchange Coins Scanner)
 
 ## ◈ GitHub Stats `📊`
 
