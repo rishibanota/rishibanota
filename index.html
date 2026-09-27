@@ -4,10 +4,15 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Rishi Banota — Developer, Tool Builder &amp; Open-Source Creator</title>
-<meta name="description" content="Portfolio of Rishi Banota — Creator of Toolmint (145+ tools), Code Arcade, TryKaro, Bugseer, AI automation utilities, Android apps, and Roblox games." />
+<meta name="description" content="Rishi Banota is an IT student and software builder in Mumbai, creating useful web tools, automation, apps, and games." />
+<meta name="theme-color" content="#f4f1e9" />
+<meta property="og:title" content="Rishi Banota — Software builder" />
+<meta property="og:description" content="Useful software for the web and beyond. Selected projects, experiments, and things I have shipped." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://rishibanota.github.io/rishibanota/" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #05070e;
@@ -42,102 +47,6 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-
-  /* Lightweight static grid overlay — zero GPU repainting lag */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    opacity: 0.12;
-    background-image:
-      linear-gradient(rgba(0, 255, 163, 0.15) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 255, 163, 0.15) 1px, transparent 1px);
-    background-size: 36px 36px;
-    pointer-events: none;
-  }
-
-  /* Intro Screen Overlay */
-  #introOverlay {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: #04060b;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  #introOverlay.hidden {
-    opacity: 0;
-    transform: translateY(-20px);
-    pointer-events: none;
-  }
-  .intro-terminal {
-    width: 90%;
-    max-width: 480px;
-    background: #0a0f1d;
-    border: 1px solid rgba(0, 255, 163, 0.3);
-    border-radius: 14px;
-    box-shadow: 0 0 50px rgba(0, 255, 163, 0.15);
-    overflow: hidden;
-    padding: 24px;
-    font-size: 13px;
-  }
-  .intro-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-  .intro-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-  }
-  .intro-dot.red { background: #ff5f56; }
-  .intro-dot.yellow { background: #ffbd2e; }
-  .intro-dot.green { background: #27c93f; }
-  .intro-title {
-    margin-left: auto;
-    font-size: 11px;
-    color: var(--txt-muted);
-    letter-spacing: 1px;
-  }
-  .intro-log {
-    color: var(--neon-cyan);
-    margin-bottom: 8px;
-    min-height: 20px;
-    font-family: inherit;
-  }
-  .intro-progress-bar {
-    width: 100%;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 999px;
-    overflow: hidden;
-    margin-top: 14px;
-    position: relative;
-  }
-  .intro-progress-fill {
-    width: 0%;
-    height: 100%;
-    background: linear-gradient(90deg, var(--neon), var(--neon-cyan));
-    border-radius: 999px;
-    transition: width 0.15s ease-out;
-    box-shadow: 0 0 10px var(--neon);
-  }
-  .intro-skip-hint {
-    margin-top: 18px;
-    font-size: 11.5px;
-    color: var(--txt-muted);
-    text-align: center;
-    cursor: pointer;
-  }
-  .intro-skip-hint:hover { color: var(--neon); }
 
   /* Page Wrapper with staggered reveal animation */
   .wrap {
@@ -962,89 +871,388 @@
   }
   .brand-glow { color: var(--neon); font-weight: 700; }
   .visitor-counter { margin-top: 14px; opacity: 0.85; }
+
+  /* Editorial portfolio system */
+  :root {
+    --bg: #f4f1e9;
+    --bg-surface: #fbf9f4;
+    --bg-card: #fffdf8;
+    --bg-card-hover: #fffaf0;
+    --neon: #c9432b;
+    --neon-cyan: #4b6e62;
+    --neon-purple: #87654c;
+    --neon-gold: #c47a27;
+    --txt: #24251f;
+    --txt-muted: #716f66;
+    --border: #ded9ce;
+    --border-hover: #c9432b;
+    --tree-line: #ddd7cc;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+  body {
+    background: var(--bg);
+    color: var(--txt);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.65;
+  }
+  body::before { display: none; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible, input:focus-visible, .folder-row:focus-visible {
+    outline: 3px solid rgba(201, 67, 43, .45);
+    outline-offset: 3px;
+  }
+  .wrap {
+    max-width: 1160px;
+    padding: 22px 36px 84px;
+    animation: none;
+  }
+  .skip-link { position: absolute; left: 16px; top: -60px; z-index: 100; padding: 10px 14px; background: var(--txt); color: white; }
+  .skip-link:focus { top: 12px; }
+  .status-bar {
+    top: 12px;
+    min-height: 58px;
+    padding: 10px 18px;
+    border: 1px solid rgba(36, 37, 31, .12);
+    border-radius: 5px;
+    background: rgba(251, 249, 244, .94);
+    box-shadow: 0 8px 28px rgba(36, 37, 31, .06);
+    backdrop-filter: blur(16px);
+    color: var(--txt-muted);
+    font-size: 12px;
+  }
+  .status-left { gap: 11px; }
+  .status-left b { color: var(--txt) !important; font-weight: 700; }
+  .pulse-dot {
+    width: 8px; height: 8px;
+    background: #4b6e62;
+    box-shadow: none;
+    animation: none;
+  }
+  .status-nav { gap: clamp(12px, 2.4vw, 28px); }
+  .status-nav a {
+    color: var(--txt-muted);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    transition: color .2s ease;
+  }
+  .status-nav a:hover { color: var(--neon); }
+  header {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 240px;
+    align-items: center;
+    gap: 56px;
+    min-height: 440px;
+    padding: 82px 0 52px;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-copy { max-width: 720px; }
+  .handle, .eyebrow {
+    color: var(--neon);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  h1 {
+    max-width: 780px;
+    margin: 18px 0 18px;
+    background: none;
+    color: var(--txt);
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(54px, 8vw, 100px);
+    font-weight: 600;
+    letter-spacing: -.065em;
+    line-height: .98;
+  }
+  h1 .hero-accent { color: var(--neon); font-style: italic; }
+  .typed-box {
+    display: inline-flex;
+    margin: 0 0 18px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--txt-muted);
+    font-size: 14px;
+  }
+  .prompt-char, .blinking-cursor { display: none; }
+  .typed-text { min-width: 0; color: var(--txt-muted); font-weight: 500; }
+  .bio {
+    max-width: 640px;
+    color: #5e5c54;
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.75;
+  }
+  .bio b { color: var(--txt); }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .hero-link {
+    display: inline-flex; align-items: center; gap: 10px;
+    min-height: 46px; padding: 0 17px;
+    border: 1px solid var(--txt); border-radius: 3px;
+    background: var(--txt); color: var(--bg-surface);
+    font-size: 13px; font-weight: 700; text-decoration: none;
+    transition: transform .18s ease, background .18s ease;
+  }
+  .hero-link:hover { transform: translateY(-2px); background: var(--neon); border-color: var(--neon); }
+  .hero-link.secondary { background: transparent; color: var(--txt); border-color: var(--border); }
+  .hero-link.secondary:hover { color: var(--neon); border-color: var(--neon); }
+  .hero-aside {
+    position: relative; display: flex; flex-direction: column; justify-content: space-between;
+    min-height: 270px; padding: 22px;
+    border: 1px solid #d7c7ae; background: #e9e0d1;
+    color: #4a4034; overflow: hidden;
+  }
+  .hero-aside::before, .hero-aside::after {
+    content: ''; position: absolute; border: 1px solid rgba(121, 81, 49, .23); border-radius: 50%;
+  }
+  .hero-aside::before { width: 220px; height: 220px; right: -62px; top: 22px; }
+  .hero-aside::after { width: 146px; height: 146px; right: -24px; top: 59px; }
+  .hero-aside-index, .hero-aside-note { position: relative; z-index: 1; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+  .hero-monogram {
+    position: relative; z-index: 1; align-self: center;
+    color: var(--neon); font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(76px, 10vw, 112px); font-weight: 600; letter-spacing: -.1em; line-height: 1;
+  }
+  .metrics-ribbon {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    grid-column: 1 / -1; margin-top: 0; padding: 24px 0 28px; border-bottom: 1px solid var(--border);
+  }
+  .metric-card { gap: 1px; padding: 4px 20px; border: 0; border-left: 1px solid var(--border); border-radius: 0; background: transparent; box-shadow: none; }
+  .metric-card:first-child { border-left: 0; padding-left: 0; }
+  .metric-card:hover { transform: none; border-color: var(--border); }
+  .metric-num { color: var(--txt); font-family: 'Fraunces', Georgia, serif; font-size: 34px; font-weight: 600; letter-spacing: -.05em; }
+  .metric-num span { color: var(--neon) !important; }
+  .metric-label { color: var(--txt-muted); font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .04em; }
+  .cards-grid { grid-template-columns: 1fr 1.5fr 1fr; gap: 0; margin-top: 0; border-bottom: 1px solid var(--border); }
+  .info-card { padding: 25px 22px; border: 0; border-left: 1px solid var(--border); border-radius: 0; background: transparent; }
+  .info-card:first-child { border-left: 0; padding-left: 0; }
+  .info-card:hover { transform: none; border-color: var(--border); }
+  .info-card h3 { color: var(--neon); font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .08em; }
+  .info-card p { color: #5e5c54; font-size: 13px; }
+  .pill-tag { margin: 3px 3px 0 0; padding: 3px 8px; border: 1px solid #d9d4ca; border-radius: 2px; background: transparent; color: #4f5049; font-size: 10px; }
+  .pill-tag:hover { background: #e9e0d1; color: var(--txt); }
+  section { margin-top: 92px; }
+  .section-head { align-items: flex-end; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  h2 {
+    display: block; color: var(--txt); font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(32px, 4vw, 48px); font-weight: 600; letter-spacing: -.045em; line-height: 1.08;
+  }
+  h2::before { display: none; }
+  .section-sub { display: block; margin-top: 6px; color: var(--txt-muted); font-size: 13px; }
+  .flagships-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+  .flagship-box {
+    justify-content: flex-start; gap: 19px; padding: 0 0 20px;
+    border: 1px solid var(--border); border-radius: 4px; background: var(--bg-surface); box-shadow: 0 4px 18px rgba(36, 37, 31, .035);
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .flagship-box::before { display: none; }
+  .flagship-box:hover { transform: translateY(-4px); border-color: #c6b8a3; box-shadow: 0 14px 30px rgba(36, 37, 31, .08); }
+  .project-art {
+    position: relative; display: flex; min-height: 185px; flex-direction: column; justify-content: space-between;
+    padding: 18px; overflow: hidden;
+  }
+  .project-art.toolmint { background: #d9e7dc; color: #264a3d; }
+  .project-art.arcade { background: #252b3c; color: #fbf0d5; }
+  .project-art.trykaro { background: #ead9c7; color: #573e2e; }
+  .art-kicker { position: relative; z-index: 1; font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; }
+  .art-display { position: relative; z-index: 1; display: flex; align-items: baseline; gap: 6px; font-family: 'Fraunces', Georgia, serif; font-size: 65px; font-weight: 600; letter-spacing: -.07em; line-height: .95; }
+  .art-display small { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0; }
+  .art-note { position: relative; z-index: 1; font-size: 11px; }
+  .art-stamp { position: absolute; right: 17px; bottom: 14px; display: grid; width: 73px; height: 73px; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-align: center; transform: rotate(-12deg); }
+  .project-art.arcade .art-display { font-family: 'IBM Plex Mono', monospace; font-size: 45px; letter-spacing: -.08em; }
+  .arcade-dots { display: flex; gap: 7px; }
+  .arcade-dots i { width: 9px; height: 9px; border-radius: 50%; background: #d86c50; }
+  .arcade-dots i:nth-child(2) { background: #e1ae55; }
+  .arcade-dots i:nth-child(3) { background: #91ad83; }
+  .project-art.trykaro .art-display { font-size: 49px; }
+  .trykaro-lines { position: absolute; right: 20px; bottom: 28px; width: 86px; height: 58px; border-top: 1px solid rgba(87, 62, 46, .45); border-bottom: 1px solid rgba(87, 62, 46, .45); transform: rotate(-18deg); }
+  .trykaro-lines::before, .trykaro-lines::after { content: ''; position: absolute; left: 0; right: 0; top: 27px; border-top: 1px solid rgba(87, 62, 46, .45); transform: rotate(28deg); }
+  .trykaro-lines::after { transform: rotate(-28deg); }
+  .flagship-box > div:not(.project-art) { padding: 0 20px; }
+  .flagship-badge { margin: 0 0 8px; padding: 0; border: 0; border-radius: 0; background: none; color: var(--neon); font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: .06em; }
+  .badge-toolmint, .badge-arcade, .badge-trykaro { color: var(--neon); }
+  .flagship-title { margin: 0 0 8px; color: var(--txt); font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 600; letter-spacing: -.035em; }
+  .flagship-desc { min-height: 110px; margin-bottom: 14px; color: #626056; font-size: 12.5px; line-height: 1.65; }
+  .flagship-tags { gap: 5px; margin-bottom: 0; }
+  .flagship-tag { padding: 3px 7px; border: 1px solid #e1ddd4; border-radius: 2px; background: transparent; color: #66645c; font-family: 'IBM Plex Mono', monospace; font-size: 9px; }
+  .flagship-actions { margin-top: auto; padding: 0 20px; }
+  .btn-primary-redirect, .btn-secondary-repo {
+    min-height: 39px; padding: 8px 12px; border: 1px solid var(--txt); border-radius: 3px;
+    background: var(--txt); color: #fffdf8; font-size: 11px; font-weight: 600;
+  }
+  .btn-primary-redirect:hover { transform: translateY(-1px); background: var(--neon); border-color: var(--neon); color: white; box-shadow: none; }
+  .btn-secondary-repo { background: transparent; color: var(--txt); border-color: var(--border); }
+  .btn-secondary-repo:hover { background: #e9e0d1; color: var(--txt); }
+  .tree-shell { padding: 22px; border: 1px solid var(--border); border-radius: 4px; background: var(--bg-surface); box-shadow: none; }
+  .category-filter-bar { gap: 7px; border-bottom-color: var(--border); }
+  .filter-pill, .btn-tree-tool {
+    padding: 7px 11px; border: 1px solid var(--border); border-radius: 3px;
+    background: transparent; color: #5e5c54; font-family: 'DM Sans', sans-serif; font-size: 11px;
+  }
+  .filter-pill:hover, .btn-tree-tool:hover { background: #eee8dc; border-color: #c6b8a3; color: var(--txt); }
+  .filter-pill.active { border-color: var(--txt); background: var(--txt); color: white; }
+  .tree-toolbar { border-bottom: 1px solid var(--border); }
+  .tree-prompt-title { color: var(--txt); font-family: 'IBM Plex Mono', monospace; font-size: 11px; }
+  .tree-search-input { min-height: 39px; border: 1px solid var(--border); border-radius: 3px; background: #fffdf8; color: var(--txt); font-family: 'DM Sans', sans-serif; font-size: 12px; }
+  .tree-search-input:focus { border-color: var(--neon); }
+  .folder-row { min-height: 44px; border: 1px solid #e7e2d8; border-radius: 3px; background: #f5f2eb; }
+  .folder-row:hover { border-color: #c6b8a3; background: #eee8dc; }
+  .folder-chevron { color: var(--neon); }
+  .folder-title, .file-name { color: var(--txt); }
+  .folder-title { font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+  .folder-counter { border: 0; background: #e8e3d9; color: var(--txt-muted); }
+  .folder-content::before, .subfolder-content::before { background: var(--tree-line); }
+  .file-item { border: 1px solid #e9e5dc; border-radius: 3px; background: #fffefa; }
+  .file-item:hover { transform: none; border-color: #c6b8a3; background: #f8f4ec; }
+  .file-item::before { color: #b6afa2; }
+  .file-name { font-size: 12px; }
+  .redirect-chip { border: 1px solid #d9d4ca; border-radius: 2px; background: transparent; color: var(--neon); font-size: 10px; }
+  .redirect-chip:hover { background: var(--neon); color: white; }
+  .redirect-chip.secondary { border-color: #d9d4ca; background: transparent; color: #4b6e62; }
+  .redirect-chip.secondary:hover { background: #4b6e62; color: white; }
+  .meta-how { color: #87654c; }
+  .meta-use { color: #716f66; }
+  .meta-use::before { color: #4b6e62; }
+  .pc-workstation-card { margin-top: 0; padding: 28px; border: 1px solid #d7c7ae; border-radius: 4px; background: #e9e0d1; }
+  .pc-badge-top { padding: 0; border: 0; background: none; color: #765a40; font-family: 'IBM Plex Mono', monospace; font-size: 10px; }
+  .pc-heading { color: var(--txt); font-family: 'Fraunces', Georgia, serif; font-size: clamp(26px, 4vw, 38px); letter-spacing: -.04em; }
+  .pc-text, .pc-text strong { color: #5e5143; }
+  .btn-support-pc { border-radius: 3px; background: var(--txt); color: white; font-size: 12px; }
+  .btn-support-pc:hover { background: var(--neon); box-shadow: none; }
+  .btn-idea-email { border: 1px solid #c8b79f; border-radius: 3px; background: transparent; color: var(--txt); font-size: 12px; }
+  .btn-idea-email:hover { background: rgba(255,255,255,.35); }
+  #connect { padding: 42px; background: #262720; color: #f4f1e9; }
+  #connect .section-head { border-bottom-color: rgba(255,255,255,.18); }
+  #connect h2 { color: #f4f1e9; }
+  #connect .section-sub { color: #c0bdb3; }
+  .social-links-grid { gap: 9px; margin-top: 22px; }
+  .social-btn { border: 1px solid rgba(255,255,255,.2); border-radius: 3px; background: transparent; color: #f4f1e9; font-size: 12px; }
+  .social-btn:hover { transform: translateY(-2px); border-color: #e87859; background: #c9432b; color: white; }
+  footer { margin-top: 36px; padding-top: 24px; border-top-color: var(--border); color: var(--txt-muted); font-family: 'IBM Plex Mono', monospace; font-size: 10px; }
+  .brand-glow { color: var(--neon); }
+  .visitor-counter { display: none; }
+  @media (max-width: 860px) {
+    .wrap { padding-right: 24px; padding-left: 24px; }
+    header { grid-template-columns: minmax(0, 1fr) 190px; gap: 28px; }
+    .hero-aside { min-height: 230px; }
+    .flagships-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .flagship-box:last-child { grid-column: 1 / -1; }
+    .flagship-box:last-child .project-art { min-height: 150px; }
+    .flagship-desc { min-height: 0; }
+  }
+  @media (max-width: 640px) {
+    .wrap { padding: 12px 17px 56px; }
+    .status-bar { position: relative; top: 0; align-items: flex-start; padding: 12px; }
+    .status-left { align-items: flex-start; max-width: 100%; }
+    .status-nav { width: 100%; justify-content: space-between; gap: 8px; padding-top: 6px; border-top: 1px solid var(--border); }
+    .status-nav a { font-size: 10px; }
+    header { grid-template-columns: 1fr; gap: 25px; min-height: 0; padding: 62px 0 34px; }
+    h1 { font-size: clamp(53px, 15vw, 82px); }
+    .bio { font-size: 16px; }
+    .hero-aside { min-height: 150px; }
+    .hero-monogram { font-size: 72px; }
+    .hero-aside::before { width: 170px; height: 170px; top: 0; }
+    .hero-aside::after { width: 115px; height: 115px; top: 27px; }
+    .metrics-ribbon { grid-template-columns: repeat(2, 1fr); row-gap: 16px; }
+    .metric-card { padding: 2px 10px; }
+    .metric-card:nth-child(odd) { border-left: 0; padding-left: 0; }
+    .metric-card:nth-child(even) { padding-left: 16px; }
+    .metric-num { font-size: 29px; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .info-card, .info-card:first-child { padding: 18px 0; border-left: 0; border-bottom: 1px solid var(--border); }
+    section { margin-top: 68px; }
+    .section-head { align-items: flex-start; }
+    .flagships-grid { grid-template-columns: 1fr; }
+    .flagship-box:last-child { grid-column: auto; }
+    .project-art { min-height: 165px; }
+    .flagship-desc { min-height: 0; }
+    .tree-shell { padding: 13px; }
+    .tree-toolbar { align-items: stretch; }
+    .tree-prompt-title { width: 100%; }
+    .tree-search-box { max-width: none; }
+    .tree-buttons { width: 100%; }
+    .tree-buttons button { flex: 1; }
+    .file-header { align-items: flex-start; }
+    .file-actions { flex-wrap: wrap; }
+    .file-meta { font-size: 11px; }
+    .pc-workstation-card { padding: 21px; }
+    #connect { padding: 25px 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  }
 </style>
 </head>
 <body>
-
-  <!-- Sleek Cyber Bootloader Intro Overlay -->
-  <div id="introOverlay" onclick="dismissIntro()">
-    <div class="intro-terminal">
-      <div class="intro-header">
-        <span class="intro-dot red"></span>
-        <span class="intro-dot yellow"></span>
-        <span class="intro-dot green"></span>
-        <span class="intro-title">RISHI_OS // BOOT_SEQ</span>
-      </div>
-      <div class="intro-log" id="introLog">&gt; INITIALIZING PORTFOLIO_CORE...</div>
-      <div class="intro-progress-bar">
-        <div class="intro-progress-fill" id="introProgress"></div>
-      </div>
-      <div class="intro-skip-hint">[Click anywhere to skip boot sequence]</div>
-    </div>
-  </div>
-
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="wrap">
     <!-- Top Sticky Bar -->
-    <div class="status-bar">
+    <nav class="status-bar" aria-label="Main navigation">
       <div class="status-left">
         <span class="pulse-dot"></span>
-        <span><b style="color:var(--neon)">OPEN TO INTERNSHIPS &amp; DEV ROLES</b> &bull; Python &middot; Automation &middot; Full-Stack &middot; Mumbai / Remote</span>
+        <span><b style="color:var(--neon)">Open to internship opportunities</b> &nbsp;·&nbsp; Mumbai / Remote</span>
       </div>
       <div class="status-nav">
-        <a href="#flagships">Flagships</a>
-        <a href="#tree">Project Tree</a>
-        <a href="#pc-build">Workstation</a>
-        <a href="#connect">Connect</a>
+        <a href="#flagships">Work</a>
+        <a href="#tree">Archive</a>
+        <a href="#about">About</a>
+        <a href="#connect">Contact ↗</a>
       </div>
-    </div>
+    </nav>
 
     <!-- Main Header -->
+    <main id="main">
     <header>
-      <div class="handle">// rishibanota</div>
-      <h1>Rishi Rajesh Banota</h1>
-      
-      <div class="typed-box">
-        <span class="prompt-char">&gt;</span>
-        <span class="typed-text">Python Developer</span>
-        <span class="blinking-cursor"></span>
+      <div class="hero-copy">
+        <div class="handle">Rishi Banota &nbsp;·&nbsp; Software builder</div>
+        <h1>Useful software<br>for the <span class="hero-accent">real world.</span></h1>
+        <div class="typed-box"><span class="typed-text">Web tools · automation · apps · playful experiments</span></div>
+        <p class="bio">
+          I’m an Information Technology student in Mumbai who likes taking small frustrations and turning them into useful products.
+          I’ve shipped <b>Toolmint</b>, <b>Code Arcade</b>, <b>TryKaro</b>, Android apps, and a few Roblox worlds along the way.
+        </p>
+        <div class="hero-actions">
+          <a class="hero-link" href="#flagships">Explore selected work <span aria-hidden="true">↘</span></a>
+          <a class="hero-link secondary" href="mailto:rishibanota837@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
-
-      <p class="bio">
-        <b>B.E. Information Technology (3rd Year, SSJCOE Mumbai)</b>.
-        Software builder focused on production utilities, edge computing, automation bots, and games.
-        Creator of <b>Toolmint</b> (145+ tools), <b>Code Arcade</b>, and <b>TryKaro</b>.
-        I build software with zero bloat, maximum efficiency, and real utility.
-      </p>
+      <aside class="hero-aside" aria-label="Portfolio introduction">
+        <span class="hero-aside-index">Portfolio / 2026</span>
+        <span class="hero-monogram" aria-hidden="true">RB</span>
+        <span class="hero-aside-note">Based in Mumbai, India<br>Building in public</span>
+      </aside>
 
       <!-- Key Metrics Ribbon -->
       <div class="metrics-ribbon">
         <div class="metric-card">
-          <div class="metric-num"><span style="color:var(--neon-gold)">145+</span> 🛠️</div>
+        <div class="metric-num"><span style="color:var(--neon-gold)">145+</span></div>
           <div class="metric-label">Micro-tools on Toolmint</div>
         </div>
         <div class="metric-card">
-          <div class="metric-num"><span style="color:var(--neon-cyan)">30+</span> 📦</div>
+        <div class="metric-num"><span style="color:var(--neon-cyan)">30+</span></div>
           <div class="metric-label">Repositories Shipped</div>
         </div>
         <div class="metric-card">
-          <div class="metric-num"><span style="color:var(--neon)">9</span> 🎮</div>
+        <div class="metric-num"><span style="color:var(--neon)">9</span></div>
           <div class="metric-label">Roblox Experiences</div>
         </div>
         <div class="metric-card">
-          <div class="metric-num"><span style="color:var(--neon-purple)">100+</span> 🛍️</div>
+        <div class="metric-num"><span style="color:var(--neon-purple)">100+</span></div>
           <div class="metric-label">Deal Stores Indexed</div>
         </div>
       </div>
     </header>
 
     <!-- Info Grid -->
-    <div class="cards-grid">
+    <div class="cards-grid" id="about">
       <div class="info-card">
-        <h3>🎓 Education</h3>
+        <h3>01 / Education</h3>
         <p><b>B.E. Information Technology</b><br/>SSJCOE, Dombivli (E), Mumbai<br/><span style="color:var(--txt-muted)">2024 – 2028 · Mumbai University</span></p>
       </div>
       <div class="info-card">
-        <h3>🛠️ Core Tech Stack</h3>
+        <h3>02 / Tools I reach for</h3>
         <p>
           <span class="pill-tag">Python</span><span class="pill-tag">FastAPI / Flask</span><span class="pill-tag">Cloudflare Workers</span>
           <span class="pill-tag">JavaScript / React</span><span class="pill-tag">Android / Java</span><span class="pill-tag">Luau / Roblox</span>
@@ -1052,12 +1260,10 @@
         </p>
       </div>
       <div class="info-card">
-        <h3>🌱 Career Goals</h3>
+        <h3>03 / What’s next</h3>
         <p>
-          💼 Seeking Internship or Junior Developer Role<br/>
-          ⚡ Python, AI Agent Tools &amp; Automation Pipelines<br/>
-          📍 Mumbai / WFH Remote<br/>
-          🚀 Consistently building and shipping in public
+          Looking for an internship where I can build useful things, learn from a thoughtful team, and ship work people rely on.<br/>
+          Interested in Python, developer tools, automation, and product engineering.
         </p>
       </div>
     </div>
@@ -1066,16 +1272,22 @@
     <section id="flagships">
       <div class="section-head">
         <div>
-          <h2>Featured Flagships</h2>
-          <span class="section-sub">High-impact platforms serving thousands of daily use-cases</span>
+          <h2>Selected work</h2>
+          <span class="section-sub">A few projects that show how I like to think and build.</span>
         </div>
       </div>
 
       <div class="flagships-grid">
         <!-- 1. Toolmint -->
         <div class="flagship-box">
+          <div class="project-art toolmint" aria-hidden="true">
+            <span class="art-kicker">A practical toolbox for the web</span>
+            <span class="art-display">145<small>+ tools</small></span>
+            <span class="art-note">Open a tool. Get on with your day.</span>
+            <span class="art-stamp">TOOL<br>MINT</span>
+          </div>
           <div>
-            <span class="flagship-badge badge-toolmint">⚡ 145+ Tools Active</span>
+            <span class="flagship-badge badge-toolmint">145+ everyday tools</span>
             <div class="flagship-title">Toolmint</div>
             <p class="flagship-desc">
               All-in-one suite offering 145+ practical, fast tools designed to simplify your everyday digital tasks.
@@ -1098,8 +1310,14 @@
 
         <!-- 2. Code Arcade -->
         <div class="flagship-box">
+          <div class="project-art arcade" aria-hidden="true">
+            <span class="art-kicker">Learn by playing</span>
+            <span class="art-display">&lt;!&gt; &nbsp; 0101</span>
+            <span class="arcade-dots"><i></i><i></i><i></i></span>
+            <span class="art-note">Small games. Real programming ideas.</span>
+          </div>
           <div>
-            <span class="flagship-badge badge-arcade">🎮 Gamified Learning</span>
+            <span class="flagship-badge badge-arcade">Learn through play</span>
             <div class="flagship-title">Code Arcade</div>
             <p class="flagship-desc">
               Offline-first coding game collection turning programming concepts into fast-paced mini-games.
@@ -1125,8 +1343,14 @@
 
         <!-- 3. TryKaro -->
         <div class="flagship-box">
+          <div class="project-art trykaro" aria-hidden="true">
+            <span class="art-kicker">Less scrolling, better finds</span>
+            <span class="art-display">Find<br>the good one.</span>
+            <span class="art-note">A smarter way to browse deals.</span>
+            <span class="trykaro-lines"></span>
+          </div>
           <div>
-            <span class="flagship-badge badge-trykaro">🛍️ Smart Deal Scanner</span>
+            <span class="flagship-badge badge-trykaro">Cross-store deal discovery</span>
             <div class="flagship-title">TryKaro</div>
             <p class="flagship-desc">
               Cross-store deal discovery platform scanning 40+ to 100+ stores.
@@ -1156,8 +1380,8 @@
     <section id="tree">
       <div class="section-head">
         <div>
-          <h2>Interactive Projects Tree</h2>
-          <span class="section-sub">Directory of 30+ repositories, tools, and games &bull; Click folders to expand</span>
+          <h2>The project archive</h2>
+          <span class="section-sub">A growing shelf of apps, experiments, games, and open-source work.</span>
         </div>
       </div>
 
@@ -1165,27 +1389,26 @@
         <!-- Quick Category Filter Pills -->
         <div class="category-filter-bar">
           <button class="filter-pill active" onclick="filterCategory('all', this)">All Projects (30+)</button>
-          <button class="filter-pill" onclick="filterCategory('web', this)">🌐 Web &amp; Flagships</button>
-          <button class="filter-pill" onclick="filterCategory('ai', this)">🤖 AI, Automation &amp; CLI</button>
-          <button class="filter-pill" onclick="filterCategory('trading', this)">📈 Trading &amp; Finance</button>
-          <button class="filter-pill" onclick="filterCategory('mobile', this)">📱 Android &amp; Mobile</button>
-          <button class="filter-pill" onclick="filterCategory('roblox', this)">🎮 Roblox Games (9)</button>
-          <button class="filter-pill" onclick="filterCategory('education', this)">📚 Education &amp; Textbooks</button>
+          <button class="filter-pill" onclick="filterCategory('web', this)">Web &amp; products</button>
+          <button class="filter-pill" onclick="filterCategory('ai', this)">AI &amp; automation</button>
+          <button class="filter-pill" onclick="filterCategory('trading', this)">Finance</button>
+          <button class="filter-pill" onclick="filterCategory('mobile', this)">Android</button>
+          <button class="filter-pill" onclick="filterCategory('roblox', this)">Roblox</button>
+          <button class="filter-pill" onclick="filterCategory('education', this)">Education</button>
         </div>
 
         <!-- Tree Toolbar -->
         <div class="tree-toolbar">
           <div class="tree-prompt-title">
-            <span>💻</span>
-            <span>~/rishibanota/projects-tree</span>
+            <span>Browse all projects</span>
           </div>
           <div class="tree-search-box">
             <span class="tree-search-icon">🔍</span>
-            <input type="text" id="treeSearch" class="tree-search-input" placeholder="Search by name, tech stack, or purpose..." autocomplete="off" />
+          <input type="search" id="treeSearch" class="tree-search-input" aria-label="Search projects" aria-controls="projectTreeList" placeholder="Search projects, tools, or technologies…" autocomplete="off" />
           </div>
           <div class="tree-buttons">
-            <button class="btn-tree-tool" onclick="expandAll()">[+] Expand All</button>
-            <button class="btn-tree-tool" onclick="collapseAll()">[-] Collapse All</button>
+            <button class="btn-tree-tool" onclick="expandAll()">Expand all</button>
+            <button class="btn-tree-tool" onclick="collapseAll()">Collapse all</button>
           </div>
         </div>
 
@@ -1985,28 +2208,24 @@
       </div>
     </section>
 
-    <!-- Workstation & PC Build Campaign Card (Bottom) -->
+    <!-- A small note about supporting the next projects -->
     <section id="pc-build">
       <div class="pc-workstation-card">
         <div class="pc-layout">
           <div>
-            <span class="pc-badge-top">🖥️ Hardware Goal &amp; Workstation Upgrade</span>
-            <div class="pc-heading">Help Me Build My Development PC &amp; Outbid Websites</div>
+            <span class="pc-badge-top">A side project</span>
+            <div class="pc-heading">A better setup for what comes next.</div>
             <p class="pc-text">
-              My current laptop struggles under demanding engineering workloads — compiling large Android codebases,
-              running local AI models, training ML bug detectors, and rendering complex 3D environments in Roblox Studio.
-              I am raising funds for a dedicated high-performance development workstation to push software shipments even faster and build high-efficiency tools.
-            </p>
-            <p class="pc-text" style="margin-top:10px">
-              <strong>Support this journey:</strong> Every contribution directly funds the workstation hardware and enables bigger open-source projects!
+              I’m saving for a workstation that can handle local AI experiments, Android builds, and heavier creative projects.
+              The page has the details; sharing the projects is just as appreciated.
             </p>
           </div>
           <div class="pc-buttons">
             <a href="https://build-me-a-pc.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-support-pc">
-              Help Me Build My PC →
+              Workstation project ↗
             </a>
             <a href="mailto:rishibanota837@gmail.com?subject=Idea%20or%20Project%20Collaboration" class="btn-idea-email">
-              💡 Have an App Idea? Email Me
+              Share an idea by email
             </a>
           </div>
         </div>
@@ -2017,8 +2236,8 @@
     <section id="connect">
       <div class="section-head">
         <div>
-          <h2>Connect &amp; Socials</h2>
-          <span class="section-sub">Always open for internship opportunities, freelance dev, or tech conversations</span>
+          <h2>Say hello.</h2>
+          <span class="section-sub">Have an interesting problem, a role, or an idea worth building? I’d like to hear about it.</span>
         </div>
       </div>
       <div class="social-links-grid">
@@ -2031,101 +2250,43 @@
         <a href="mailto:rishibanota837@gmail.com" class="social-btn">✉️ Email Me</a>
       </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-      <p>Built with passion &bull; <span class="brand-glow">Rishi Rajesh Banota</span> &bull; 2026</p>
-      <p style="color:var(--txt-muted);margin-top:4px">&ldquo;Distribution beats perfection. Ship daily.&rdquo;</p>
-      <div class="visitor-counter">
-        <img src="https://visitor-badge.laobi.icu/badge?page_id=rishibanota.portfolio" alt="Portfolio Visitors Counter" />
-      </div>
+      <p><span class="brand-glow">Rishi Rajesh Banota</span> &nbsp;·&nbsp; Designed and built with care &nbsp;·&nbsp; 2026</p>
     </footer>
   </div>
 
   <!-- Interactive Logic -->
   <script>
-    // 0. Sleek Intro Animation
-    const introOverlay = document.getElementById("introOverlay");
-    const introLog = document.getElementById("introLog");
-    const introProgress = document.getElementById("introProgress");
-
-    const bootSteps = [
-      { text: "> INITIALIZING RISHI_CORE v2.6...", pct: 20, wait: 450 },
-      { text: "> MOUNTING 30+ REPOSITORIES & DEVTOOLS...", pct: 45, wait: 450 },
-      { text: "> CONNECTING 145+ MICRO-TOOLS ON TOOLMINT...", pct: 70, wait: 450 },
-      { text: "> LOADING ROBLOX EXPERIENCES & APPS...", pct: 90, wait: 450 },
-      { text: "> STATUS: ONLINE // ACCESS GRANTED", pct: 100, wait: 550 }
-    ];
-
-    let currentStep = 0;
-    function runBootSeq() {
-      if (currentStep < bootSteps.length) {
-        const step = bootSteps[currentStep];
-        introLog.textContent = step.text;
-        introProgress.style.width = step.pct + "%";
-        currentStep++;
-        setTimeout(runBootSeq, step.wait);
-      } else {
-        setTimeout(dismissIntro, 600);
-      }
-    }
-
-    function dismissIntro() {
-      if (!introOverlay.classList.contains("hidden")) {
-        introOverlay.classList.add("hidden");
-      }
-    }
-
-    // Run boot sequence on load
-    window.addEventListener("DOMContentLoaded", runBootSeq);
-
-    // 1. Dynamic Typewriter
-    const roles = [
-      "Python Developer",
-      "Full-Stack Automation Engineer",
-      "Creator of Toolmint (145+ Tools)",
-      "Android & Offline-First App Maker",
-      "Roblox Game Creator",
-      "Open-Source Contributor"
-    ];
-    let r = 0, c = 0, isDel = false;
-    const typedTextEl = document.querySelector(".typed-text");
-
-    function typeEffect() {
-      const cur = roles[r];
-      if (isDel) {
-        typedTextEl.textContent = cur.substring(0, c--);
-      } else {
-        typedTextEl.textContent = cur.substring(0, c++);
-      }
-
-      let delay = isDel ? 35 : 80;
-
-      if (!isDel && c === cur.length + 1) {
-        delay = 1800;
-        isDel = true;
-      } else if (isDel && c === 0) {
-        isDel = false;
-        r = (r + 1) % roles.length;
-        delay = 400;
-      }
-
-      setTimeout(typeEffect, delay);
-    }
-    typeEffect();
-
-    // 2. Folder toggle
+    // Project archive interactions
     function toggleFolder(row) {
       const parent = row.parentElement;
       parent.classList.toggle("open");
+      row.setAttribute("aria-expanded", parent.classList.contains("open"));
     }
+
+    document.querySelectorAll(".folder-row").forEach(row => {
+      row.setAttribute("role", "button");
+      row.setAttribute("tabindex", "0");
+      row.setAttribute("aria-expanded", row.parentElement.classList.contains("open"));
+      row.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleFolder(row);
+        }
+      });
+    });
 
     function expandAll() {
       document.querySelectorAll(".folder-block, .subfolder-block").forEach(b => b.classList.add("open"));
+      document.querySelectorAll(".folder-row").forEach(row => row.setAttribute("aria-expanded", "true"));
     }
 
     function collapseAll() {
       document.querySelectorAll(".folder-block, .subfolder-block").forEach(b => b.classList.remove("open"));
+      document.querySelectorAll(".folder-row").forEach(row => row.setAttribute("aria-expanded", "false"));
     }
 
     // 3. Category Filter Tabs
@@ -2142,6 +2303,7 @@
         if (cat === "all" || fCat === cat) {
           f.style.display = "";
           f.classList.add("open");
+          f.querySelector(":scope > .folder-row").setAttribute("aria-expanded", "true");
           f.querySelectorAll(".file-item").forEach(item => item.style.display = "");
         } else {
           f.style.display = "none";
@@ -2164,11 +2326,13 @@
         folders.forEach(f => {
           f.style.display = "";
           f.classList.add("open");
+          f.querySelector(":scope > .folder-row").setAttribute("aria-expanded", "true");
         });
         subfolders.forEach(sf => {
           sf.style.display = "";
           sf.classList.add("open");
         });
+        document.querySelectorAll(".folder-row").forEach(row => row.setAttribute("aria-expanded", row.parentElement.classList.contains("open")));
       } else {
         items.forEach(it => it.style.display = "");
         folders.forEach(f => f.style.display = "");
