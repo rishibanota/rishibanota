@@ -35,7 +35,7 @@
 ## ⭐ Featured Projects
 
 - 💻 Bugseer (Bug Auditor)
-- 🌐 ToolMint Website (145+ Daily Use Tools)
+- 🌐 ToolMint Website (200+ Daily Use Tools)
 - 🛒 TryKaro (Search 40+ Stores in One Query)
 - 🎮 Code Arcade (Coding Game to Develop Coding Skills)
 - 💹 Crypto Stock Scanner (Delta Exchange Coins Scanner)
