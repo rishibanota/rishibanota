@@ -47,7 +47,7 @@ Here are a few selected projects that showcase how I like to design, architect, 
 
 - 📖 **First Book:** *[1000 Amazing Facts](https://notionpress.com/in/read/1000-amazing-facts)* — Published non-fiction paperback & eBook on Notion Press (**🎉 19 Sales Milestone at ₹120 each**)
 - 🎮 **Roblox & Indie Games:** [Roblox Profile](https://www.roblox.com/users/2887606723/profile/) & [itch.io (@rishigamer20062)](https://rishigamer20062.itch.io/) — 9+ games shipped; **UGC Grinders** achieved a **🎉 1,200 Robux player donation milestone!**
-- ▶️ **YouTube Channel:** [YouTube (@rishigameryt607)](https://youtube.com/@rishigameryt607) — Roblox gameplay, devlogs, and tech project showcases
+- ▶️ **YouTube Channel:** [YouTube (@rishigameryt607)](https://youtube.com/@rishigameryt607) — gameplay (Currently Stopped)
 - 🤖 **Reddit Community:** [Reddit (@CoderRishi)](https://www.reddit.com/u/CoderRishi/s/yDww3yw9KI) — Developer community discussions, project launches & updates
 - ✍️ **Technical Articles:** [Medium (@rishibanota)](https://medium.com/@rishibanota) — Engineering essays, project insights, and tutorials
 - 🛒 **Digital Storefront:** [Gumroad (@codewithrishi)](https://codewithrishi.gumroad.com/) — Developer tools, code templates, and software starters
