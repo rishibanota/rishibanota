@@ -1123,6 +1123,95 @@
   .btn-support-pc:hover { background: var(--neon); box-shadow: none; }
   .btn-idea-email { border: 1px solid #c8b79f; border-radius: 3px; background: transparent; color: var(--txt); font-size: 12px; }
   .btn-idea-email:hover { background: rgba(255,255,255,.35); }
+  .pub-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 18px;
+  }
+  .pub-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 22px 20px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg-surface);
+    box-shadow: 0 4px 18px rgba(36, 37, 31, .035);
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .pub-card:hover {
+    transform: translateY(-3px);
+    border-color: #c6b8a3;
+    box-shadow: 0 14px 30px rgba(36, 37, 31, .08);
+  }
+  .pub-card-badge {
+    color: var(--neon);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .pub-card-title {
+    color: var(--txt);
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -.03em;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .pub-card-desc {
+    color: #626056;
+    font-size: 13px;
+    line-height: 1.65;
+    margin-bottom: 18px;
+    flex-grow: 1;
+  }
+  .pub-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+  .pub-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .pub-card-tag {
+    padding: 2px 7px;
+    border: 1px solid #e1ddd4;
+    border-radius: 2px;
+    color: #66645c;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+  }
+  .pub-card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 13px;
+    border: 1px solid var(--txt);
+    border-radius: 3px;
+    background: var(--txt);
+    color: #fffdf8;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .18s, border-color .18s, transform .18s;
+  }
+  .pub-card-btn:hover {
+    background: var(--neon);
+    border-color: var(--neon);
+    color: white;
+    transform: translateY(-1px);
+  }
   #connect { padding: 42px; background: #262720; color: #f4f1e9; }
   #connect .section-head { border-bottom-color: rgba(255,255,255,.18); }
   #connect h2 { color: #f4f1e9; }
@@ -1165,6 +1254,7 @@
     section { margin-top: 68px; }
     .section-head { align-items: flex-start; }
     .flagships-grid { grid-template-columns: 1fr; }
+    .pub-cards-grid { grid-template-columns: 1fr; }
     .flagship-box:last-child { grid-column: auto; }
     .project-art { min-height: 165px; }
     .flagship-desc { min-height: 0; }
@@ -1197,6 +1287,7 @@
       <div class="status-nav">
         <a href="#flagships">Work</a>
         <a href="#tree">Archive</a>
+        <a href="#stores-publications">Stores &amp; Writing</a>
         <a href="#about">About</a>
         <a href="#connect">Contact ↗</a>
       </div>
@@ -1211,7 +1302,7 @@
         <div class="typed-box"><span class="typed-text">Web tools · automation · apps · playful experiments</span></div>
         <p class="bio">
           I’m an Information Technology student in Mumbai who likes taking small frustrations and turning them into useful products.
-          I’ve shipped <b>Toolmint</b>, <b>Code Arcade</b>, <b>TryKaro</b>, Android apps, and a few Roblox worlds along the way.
+          I’ve shipped <b>Toolmint</b>, <b>Code Arcade</b>, <b>TryKaro</b>, Android apps on the <b>Amazon Appstore</b>, games on <b>itch.io</b>, and authored <b>1000 Amazing Facts</b>.
         </p>
         <div class="hero-actions">
           <a class="hero-link" href="#flagships">Explore selected work <span aria-hidden="true">↘</span></a>
@@ -1388,13 +1479,13 @@
       <div class="tree-shell">
         <!-- Quick Category Filter Pills -->
         <div class="category-filter-bar">
-          <button class="filter-pill active" onclick="filterCategory('all', this)">All Projects (30+)</button>
+          <button class="filter-pill active" onclick="filterCategory('all', this)">All Projects (35+)</button>
           <button class="filter-pill" onclick="filterCategory('web', this)">Web &amp; products</button>
           <button class="filter-pill" onclick="filterCategory('ai', this)">AI &amp; automation</button>
           <button class="filter-pill" onclick="filterCategory('trading', this)">Finance</button>
           <button class="filter-pill" onclick="filterCategory('mobile', this)">Android</button>
-          <button class="filter-pill" onclick="filterCategory('roblox', this)">Roblox</button>
-          <button class="filter-pill" onclick="filterCategory('education', this)">Education</button>
+          <button class="filter-pill" onclick="filterCategory('roblox', this)">Games &amp; Roblox</button>
+          <button class="filter-pill" onclick="filterCategory('education', this)">Education &amp; Books</button>
         </div>
 
         <!-- Tree Toolbar -->
@@ -1421,7 +1512,7 @@
               <span class="folder-chevron">&#9656;</span>
               <span class="folder-glyph">📁</span>
               <span class="folder-title">web-platforms/</span>
-              <span class="folder-counter">4 items</span>
+              <span class="folder-counter">5 items</span>
             </div>
             <ul class="folder-content">
               <!-- Toolmint -->
@@ -1492,6 +1583,23 @@
                 <div class="file-meta">
                   <span class="meta-how">HTML5 · JavaScript · Delta Exchange Public APIs</span>
                   <span class="meta-use">Real-time crypto stocks price tracker and live market movement detector.</span>
+                </div>
+              </li>
+
+              <!-- Gumroad Creator Store -->
+              <li class="file-item" data-keywords="gumroad codewithrishi store digital products assets templates tools software code with rishi">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">🛒</span>
+                    <span class="file-name">Gumroad Digital Store (@codewithrishi)</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://codewithrishi.gumroad.com/" target="_blank" rel="noopener noreferrer" class="redirect-chip">Gumroad Store ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Digital Creator Store · Developer Resources &amp; Templates</span>
+                  <span class="meta-use">Official storefront offering developer utilities, code templates, starters, and digital software kits.</span>
                 </div>
               </li>
             </ul>
@@ -1712,9 +1820,26 @@
               <span class="folder-chevron">&#9656;</span>
               <span class="folder-glyph">📁</span>
               <span class="folder-title">android-mobile-apps/</span>
-              <span class="folder-counter">7 apps</span>
+              <span class="folder-counter">8 items</span>
             </div>
             <ul class="folder-content">
+              <!-- Amazon Appstore Publisher Page -->
+              <li class="file-item" data-keywords="amazon appstore rishi games android apps store publisher official mobile developer download apk">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">🏪</span>
+                    <span class="file-name">Amazon Appstore &ndash; Rishi Games Hub</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://www.amazon.com/s?i=mobile-apps&amp;rh=p_4%3ARishi%2BGames&amp;search-type=ss" target="_blank" rel="noopener noreferrer" class="redirect-chip">Appstore Catalog ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Amazon Appstore Publisher · Android Apps &amp; Utilities</span>
+                  <span class="meta-use">Official developer catalog on the Amazon Appstore featuring published mobile tools, screen utilities, and apps.</span>
+                </div>
+              </li>
+
               <!-- Android Power ToolKit -->
               <li class="file-item" data-keywords="android power toolkit hardware diagnostics battery sensor privacy no ads">
                 <div class="file-header">
@@ -1836,13 +1961,13 @@
             </ul>
           </li>
 
-          <!-- 5. Roblox Games (Recursive Tree) -->
+          <!-- 5. Roblox & Indie Games (Recursive Tree) -->
           <li class="folder-block open" data-cat="roblox">
             <div class="folder-row" onclick="toggleFolder(this)">
               <span class="folder-chevron">&#9656;</span>
               <span class="folder-glyph">📁</span>
-              <span class="folder-title">roblox-games/</span>
-              <span class="folder-counter">9 games + hub</span>
+              <span class="folder-title">games-roblox-and-itch/</span>
+              <span class="folder-counter">9 games + 2 hubs</span>
             </div>
             <ul class="folder-content">
               <!-- Roblox Hub Repo -->
@@ -1860,6 +1985,23 @@
                 <div class="file-meta">
                   <span class="meta-how">Luau · Roblox Studio · Game Architecture</span>
                   <span class="meta-use">Official directory and profile hub for all games developed under @rishigamer20062.</span>
+                </div>
+              </li>
+
+              <!-- Itch.io Indie Games & Prototypes Hub -->
+              <li class="file-item" data-keywords="itchio itch indie games developer rishigamer20062 browser games playable experiments web downloads">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">🎮</span>
+                    <span class="file-name">Itch.io Indie Games Hub (@rishigamer20062)</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://rishigamer20062.itch.io/" target="_blank" rel="noopener noreferrer" class="redirect-chip">itch.io Profile ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Indie Game Publishing · Browser &amp; PC Games · @rishigamer20062</span>
+                  <span class="meta-use">Playable web experiments, game jam builds, and standalone indie games on itch.io.</span>
                 </div>
               </li>
 
@@ -2029,13 +2171,13 @@
             </ul>
           </li>
 
-          <!-- 6. Educational Platforms & Textbooks -->
+          <!-- 6. Educational Platforms, Books & Textbooks -->
           <li class="folder-block open" data-cat="education">
             <div class="folder-row" onclick="toggleFolder(this)">
               <span class="folder-chevron">&#9656;</span>
               <span class="folder-glyph">📁</span>
-              <span class="folder-title">education-textbooks/</span>
-              <span class="folder-counter">9 items</span>
+              <span class="folder-title">education-books-and-textbooks/</span>
+              <span class="folder-counter">10 items</span>
             </div>
             <ul class="folder-content">
               <!-- Maharashtra HSC Board Textbooks -->
@@ -2052,6 +2194,23 @@
                 <div class="file-meta">
                   <span class="meta-how">Android · PDF Reader Engine · Offline Library</span>
                   <span class="meta-use">Free organized textbook portal for 11th &amp; 12th HSC students across Science, Commerce &amp; Arts.</span>
+                </div>
+              </li>
+
+              <!-- 1000 Amazing Facts Book -->
+              <li class="file-item" data-keywords="1000 amazing facts rishi banota notion press published book author non-fiction learning trivia education first book">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">📖</span>
+                    <span class="file-name">1000 Amazing Facts (First Published Book)</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://notionpress.com/in/read/1000-amazing-facts" target="_blank" rel="noopener noreferrer" class="redirect-chip">Read on Notion Press ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Published Paperback &amp; eBook · Notion Press · Author: Rishi Banota</span>
+                  <span class="meta-use">First published non-fiction book containing 1000 curated fascinating facts to broaden everyday knowledge and curiosity.</span>
                 </div>
               </li>
 
@@ -2082,19 +2241,19 @@
                 </div>
                 <ul class="subfolder-content">
                   <!-- Main Blog Portal -->
-                  <li class="file-item" data-keywords="5th to 10th std textbooks blog download portal maharashtrahscbooks blogspot">
+                  <li class="file-item" data-keywords="5th to 10th std textbooks blog download portal maharashtrahscbooks blogspot old blog educational state board maharashtra">
                     <div class="file-header">
                       <div class="file-title-wrap">
                         <span class="file-icon">🌐</span>
-                        <span class="file-name">5th to 10th Std Textbooks Official Blog</span>
+                        <span class="file-name">Maharashtra HSC &amp; School Textbooks Blog (Old Blog)</span>
                       </div>
                       <div class="file-actions">
-                        <a href="https://maharashtrahscbooks.blogspot.com/" target="_blank" rel="noopener noreferrer" class="redirect-chip">Open Blog Portal ↗</a>
+                        <a href="https://maharashtrahscbooks.blogspot.com/" target="_blank" rel="noopener noreferrer" class="redirect-chip">maharashtrahscbooks.blogspot.com ↗</a>
                       </div>
                     </div>
                     <div class="file-meta">
-                      <span class="meta-how">Web &middot; Blogspot Educational Distribution</span>
-                      <span class="meta-use">Central web hub for students to download state board textbooks from 5th to 10th standard for free.</span>
+                      <span class="meta-how">Blogger / Blogspot · Educational Resource Distribution</span>
+                      <span class="meta-use">Original web hub and textbook archive for students across Maharashtra board grades to download study materials.</span>
                     </div>
                   </li>
 
@@ -2208,6 +2367,123 @@
       </div>
     </section>
 
+    <!-- Creator Stores & Published Works Section -->
+    <section id="stores-publications">
+      <div class="section-head">
+        <div>
+          <h2>Stores &amp; publications</h2>
+          <span class="section-sub">Digital storefronts, indie games, published writing, and educational web archives.</span>
+        </div>
+      </div>
+
+      <div class="pub-cards-grid">
+        <!-- 1. Gumroad Store -->
+        <div class="pub-card">
+          <div>
+            <div class="pub-card-badge">🛒 Digital Storefront</div>
+            <div class="pub-card-title">Gumroad (@codewithrishi)</div>
+            <p class="pub-card-desc">
+              Creator storefront offering developer utilities, code templates, starters, and curated digital software kits.
+            </p>
+          </div>
+          <div class="pub-card-footer">
+            <div class="pub-card-tags">
+              <span class="pub-card-tag">Templates</span>
+              <span class="pub-card-tag">Developer Tools</span>
+              <span class="pub-card-tag">Digital Kits</span>
+            </div>
+            <a href="https://codewithrishi.gumroad.com/" target="_blank" rel="noopener noreferrer" class="pub-card-btn">
+              Open Store ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Itch.io Indie Games -->
+        <div class="pub-card">
+          <div>
+            <div class="pub-card-badge">🎮 Indie Game Publishing</div>
+            <div class="pub-card-title">itch.io Games (@rishigamer20062)</div>
+            <p class="pub-card-desc">
+              Playable browser games, game jam submissions, prototypes, and experimental indie gaming projects.
+            </p>
+          </div>
+          <div class="pub-card-footer">
+            <div class="pub-card-tags">
+              <span class="pub-card-tag">Browser Games</span>
+              <span class="pub-card-tag">Game Jams</span>
+              <span class="pub-card-tag">Indie Dev</span>
+            </div>
+            <a href="https://rishigamer20062.itch.io/" target="_blank" rel="noopener noreferrer" class="pub-card-btn">
+              Play on itch.io ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. Amazon Appstore -->
+        <div class="pub-card">
+          <div>
+            <div class="pub-card-badge">📱 Mobile Distribution</div>
+            <div class="pub-card-title">Amazon Appstore: Rishi Games</div>
+            <p class="pub-card-desc">
+              Official publisher catalog featuring published Android utilities, screen overlay tools, and mobile productivity apps.
+            </p>
+          </div>
+          <div class="pub-card-footer">
+            <div class="pub-card-tags">
+              <span class="pub-card-tag">Android Apps</span>
+              <span class="pub-card-tag">Utilities</span>
+              <span class="pub-card-tag">Amazon Appstore</span>
+            </div>
+            <a href="https://www.amazon.com/s?i=mobile-apps&amp;rh=p_4%3ARishi%2BGames&amp;search-type=ss" target="_blank" rel="noopener noreferrer" class="pub-card-btn">
+              View Catalog ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. First Book: 1000 Amazing Facts -->
+        <div class="pub-card">
+          <div>
+            <div class="pub-card-badge">📖 First Published Book</div>
+            <div class="pub-card-title">1000 Amazing Facts</div>
+            <p class="pub-card-desc">
+              First authored non-fiction book published on Notion Press: 1,000 carefully curated, intriguing facts to boost day-to-day knowledge and curiosity.
+            </p>
+          </div>
+          <div class="pub-card-footer">
+            <div class="pub-card-tags">
+              <span class="pub-card-tag">Notion Press</span>
+              <span class="pub-card-tag">Paperback &amp; eBook</span>
+              <span class="pub-card-tag">Rishi Banota</span>
+            </div>
+            <a href="https://notionpress.com/in/read/1000-amazing-facts" target="_blank" rel="noopener noreferrer" class="pub-card-btn">
+              Read on Notion Press ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. Old Blog: Maharashtra HSC Books -->
+        <div class="pub-card">
+          <div>
+            <div class="pub-card-badge">📝 Educational Web Archive</div>
+            <div class="pub-card-title">Maharashtra HSC Books (Old Blog)</div>
+            <p class="pub-card-desc">
+              Original educational distribution blog at maharashtrahscbooks.blogspot.com, providing free, structured textbook downloads for 5th to 12th standard state board students.
+            </p>
+          </div>
+          <div class="pub-card-footer">
+            <div class="pub-card-tags">
+              <span class="pub-card-tag">Blogger / Blogspot</span>
+              <span class="pub-card-tag">5th&ndash;12th Std</span>
+              <span class="pub-card-tag">Free Textbooks</span>
+            </div>
+            <a href="https://maharashtrahscbooks.blogspot.com/" target="_blank" rel="noopener noreferrer" class="pub-card-btn">
+              Visit Blog Archive ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- A small note about supporting the next projects -->
     <section id="pc-build">
       <div class="pc-workstation-card">
@@ -2246,6 +2522,11 @@
         <a href="https://x.com/BanotaRish87559" target="_blank" rel="noopener noreferrer" class="social-btn">🐦 X / Twitter (@BanotaRish87559)</a>
         <a href="https://leetcode.com/u/rishibanota/" target="_blank" rel="noopener noreferrer" class="social-btn">⚡ LeetCode</a>
         <a href="https://www.roblox.com/users/2887606723/profile/" target="_blank" rel="noopener noreferrer" class="social-btn">🕹️ Roblox Profile</a>
+        <a href="https://codewithrishi.gumroad.com/" target="_blank" rel="noopener noreferrer" class="social-btn">🛒 Gumroad (@codewithrishi)</a>
+        <a href="https://rishigamer20062.itch.io/" target="_blank" rel="noopener noreferrer" class="social-btn">🎮 itch.io (@rishigamer20062)</a>
+        <a href="https://www.amazon.com/s?i=mobile-apps&amp;rh=p_4%3ARishi%2BGames&amp;search-type=ss" target="_blank" rel="noopener noreferrer" class="social-btn">📱 Amazon Appstore</a>
+        <a href="https://notionpress.com/in/read/1000-amazing-facts" target="_blank" rel="noopener noreferrer" class="social-btn">📖 First Book: 1000 Amazing Facts</a>
+        <a href="https://maharashtrahscbooks.blogspot.com/" target="_blank" rel="noopener noreferrer" class="social-btn">📝 Old Blog (maharashtrahscbooks)</a>
         <!-- Email named button only (No direct email exposed in UI text) -->
         <a href="mailto:rishibanota837@gmail.com" class="social-btn">✉️ Email Me</a>
       </div>
