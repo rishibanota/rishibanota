@@ -13,6 +13,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  try {
+    const saved = localStorage.getItem("theme-pref");
+    if (saved === "dark" || (!saved && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  } catch (e) {}
+</script>
 <style>
   :root {
     --bg: #05070e;
@@ -1222,6 +1230,217 @@
   footer { margin-top: 36px; padding-top: 24px; border-top-color: var(--border); color: var(--txt-muted); font-family: 'IBM Plex Mono', monospace; font-size: 10px; }
   .brand-glow { color: var(--neon); }
   .visitor-counter { display: none; }
+
+  /* ========================================================
+     DARK MODE PALETTE & OVERRIDES
+     ======================================================== */
+  .theme-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--txt);
+    cursor: pointer;
+    font-size: 13px;
+    padding: 0;
+    line-height: 1;
+    transition: background .18s, border-color .18s, transform .18s;
+  }
+  .theme-toggle-btn:hover {
+    background: #eee8dc;
+    border-color: #c6b8a3;
+    transform: scale(1.05);
+  }
+  [data-theme="dark"] .theme-toggle-btn:hover {
+    background: #21262d;
+    border-color: #484f58;
+  }
+  [data-theme="dark"] {
+    --bg: #0d1117;
+    --bg-surface: #161b22;
+    --bg-card: #21262d;
+    --bg-card-hover: #30363d;
+    --neon: #ff7b72;
+    --neon-cyan: #56d364;
+    --neon-purple: #d2a8ff;
+    --neon-gold: #f2cc60;
+    --txt: #f0f6fc;
+    --txt-muted: #8b949e;
+    --border: #30363d;
+    --border-hover: #ff7b72;
+    --tree-line: #30363d;
+  }
+  [data-theme="dark"] body {
+    background-color: var(--bg);
+    color: var(--txt);
+  }
+  [data-theme="dark"] .status-bar {
+    background: rgba(22, 27, 34, 0.94);
+    border-color: var(--border);
+    color: var(--txt-muted);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+  }
+  [data-theme="dark"] .status-left b {
+    color: var(--txt) !important;
+  }
+  [data-theme="dark"] .status-nav a {
+    color: var(--txt-muted);
+  }
+  [data-theme="dark"] .status-nav a:hover {
+    color: var(--neon);
+  }
+  [data-theme="dark"] .bio,
+  [data-theme="dark"] .info-card p,
+  [data-theme="dark"] .flagship-desc,
+  [data-theme="dark"] .pub-card-desc,
+  [data-theme="dark"] .meta-use {
+    color: #a3b1bf;
+  }
+  [data-theme="dark"] .hero-aside {
+    border-color: #30363d;
+    background: #1c2128;
+    color: #c9d1d9;
+  }
+  [data-theme="dark"] .hero-aside::before,
+  [data-theme="dark"] .hero-aside::after {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  [data-theme="dark"] .pill-tag {
+    border-color: var(--border);
+    color: #c9d1d9;
+    background: rgba(255, 255, 255, 0.04);
+  }
+  [data-theme="dark"] .pill-tag:hover {
+    background: #30363d;
+    color: var(--txt);
+  }
+  [data-theme="dark"] .flagship-box,
+  [data-theme="dark"] .tree-shell,
+  [data-theme="dark"] .pub-card {
+    background: var(--bg-surface);
+    border-color: var(--border);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  }
+  [data-theme="dark"] .flagship-box:hover,
+  [data-theme="dark"] .pub-card:hover {
+    border-color: #58a6ff;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+  }
+  [data-theme="dark"] .flagship-tag,
+  [data-theme="dark"] .pub-card-tag {
+    border-color: var(--border);
+    color: var(--txt-muted);
+  }
+  [data-theme="dark"] .folder-row {
+    background: #21262d;
+    border-color: var(--border);
+  }
+  [data-theme="dark"] .folder-row:hover {
+    background: #282e37;
+    border-color: #484f58;
+  }
+  [data-theme="dark"] .folder-counter {
+    background: #30363d;
+    color: var(--txt-muted);
+  }
+  [data-theme="dark"] .file-item {
+    background: #161b22;
+    border-color: var(--border);
+  }
+  [data-theme="dark"] .file-item:hover {
+    background: #21262d;
+    border-color: #484f58;
+  }
+  [data-theme="dark"] .tree-search-input {
+    background: #0d1117;
+    border-color: var(--border);
+    color: var(--txt);
+  }
+  [data-theme="dark"] .filter-pill,
+  [data-theme="dark"] .btn-tree-tool {
+    border-color: var(--border);
+    color: var(--txt-muted);
+  }
+  [data-theme="dark"] .filter-pill:hover,
+  [data-theme="dark"] .btn-tree-tool:hover {
+    background: #21262d;
+    border-color: #484f58;
+    color: var(--txt);
+  }
+  [data-theme="dark"] .filter-pill.active {
+    background: var(--txt);
+    color: var(--bg);
+    border-color: var(--txt);
+  }
+  [data-theme="dark"] .meta-how {
+    color: #e3b341;
+  }
+  [data-theme="dark"] .redirect-chip {
+    border-color: #30363d;
+    color: var(--neon);
+  }
+  [data-theme="dark"] .redirect-chip:hover {
+    background: var(--neon);
+    color: #0d1117;
+  }
+  [data-theme="dark"] .redirect-chip.secondary {
+    border-color: #30363d;
+    color: var(--neon-cyan);
+  }
+  [data-theme="dark"] .redirect-chip.secondary:hover {
+    background: var(--neon-cyan);
+    color: #0d1117;
+  }
+  [data-theme="dark"] .pc-workstation-card {
+    background: #1c2128;
+    border-color: #30363d;
+  }
+  [data-theme="dark"] .pc-badge-top {
+    color: #f2cc60;
+  }
+  [data-theme="dark"] .pc-text,
+  [data-theme="dark"] .pc-text strong {
+    color: #a3b1bf;
+  }
+  [data-theme="dark"] .btn-idea-email {
+    border-color: var(--border);
+    color: var(--txt);
+  }
+  [data-theme="dark"] .btn-idea-email:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+  [data-theme="dark"] .btn-support-pc,
+  [data-theme="dark"] .btn-primary-redirect,
+  [data-theme="dark"] .pub-card-btn,
+  [data-theme="dark"] .hero-link:not(.secondary) {
+    background: #f0f6fc;
+    color: #0d1117;
+    border-color: #f0f6fc;
+  }
+  [data-theme="dark"] .btn-support-pc:hover,
+  [data-theme="dark"] .btn-primary-redirect:hover,
+  [data-theme="dark"] .pub-card-btn:hover,
+  [data-theme="dark"] .hero-link:not(.secondary):hover {
+    background: var(--neon);
+    color: #0d1117;
+    border-color: var(--neon);
+  }
+  [data-theme="dark"] .btn-secondary-repo {
+    border-color: var(--border);
+    color: var(--txt);
+  }
+  [data-theme="dark"] .btn-secondary-repo:hover {
+    background: #21262d;
+    color: var(--txt);
+  }
+  [data-theme="dark"] #connect {
+    background: #12161f;
+    border: 1px solid var(--border);
+  }
   @media (max-width: 860px) {
     .wrap { padding-right: 24px; padding-left: 24px; }
     header { grid-template-columns: minmax(0, 1fr) 190px; gap: 28px; }
@@ -1290,6 +1509,10 @@
         <a href="#stores-publications">Stores &amp; Writing</a>
         <a href="#about">About</a>
         <a href="#connect">Contact ↗</a>
+        <button id="themeToggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+          <span class="theme-icon light-icon" aria-hidden="true">☀️</span>
+          <span class="theme-icon dark-icon" aria-hidden="true" style="display:none;">🌙</span>
+        </button>
       </div>
     </nav>
 
@@ -1512,7 +1735,7 @@
               <span class="folder-chevron">&#9656;</span>
               <span class="folder-glyph">📁</span>
               <span class="folder-title">web-platforms/</span>
-              <span class="folder-counter">5 items</span>
+              <span class="folder-counter">6 items</span>
             </div>
             <ul class="folder-content">
               <!-- Toolmint -->
@@ -1600,6 +1823,23 @@
                 <div class="file-meta">
                   <span class="meta-how">Digital Creator Store · Developer Resources &amp; Templates</span>
                   <span class="meta-use">Official storefront offering developer utilities, code templates, starters, and digital software kits.</span>
+                </div>
+              </li>
+
+              <!-- Reddit Developer Profile -->
+              <li class="file-item" data-keywords="reddit coderrishi profile dev community discussions sharing builder tech">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">🤖</span>
+                    <span class="file-name">Reddit Developer Profile (@CoderRishi)</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://www.reddit.com/u/CoderRishi/s/yDww3yw9KI" target="_blank" rel="noopener noreferrer" class="redirect-chip">Reddit ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Developer Community · Tech Discussions &amp; Updates</span>
+                  <span class="meta-use">Active Reddit account engaging in developer communities, project showcases, and programming threads.</span>
                 </div>
               </li>
             </ul>
@@ -2005,6 +2245,23 @@
                 </div>
               </li>
 
+              <!-- YouTube Gaming & Tech Channel -->
+              <li class="file-item" data-keywords="youtube rishigameryt607 channel gaming roblox luau tutorials videos game development">
+                <div class="file-header">
+                  <div class="file-title-wrap">
+                    <span class="file-icon">▶️</span>
+                    <span class="file-name">YouTube Gaming &amp; Tech Channel (@rishigameryt607)</span>
+                  </div>
+                  <div class="file-actions">
+                    <a href="https://youtube.com/@rishigameryt607" target="_blank" rel="noopener noreferrer" class="redirect-chip">YouTube Channel ↗</a>
+                  </div>
+                </div>
+                <div class="file-meta">
+                  <span class="meta-how">Video Content · Roblox Gameplay &amp; Tech Showcases</span>
+                  <span class="meta-use">Official YouTube channel showcasing Roblox experiences, game builds, and interactive developer content.</span>
+                </div>
+              </li>
+
               <!-- Recursive playable experiences -->
               <li class="subfolder-block open">
                 <div class="folder-row" onclick="toggleFolder(this)">
@@ -2117,19 +2374,19 @@
                   </li>
 
                   <!-- Game 7 -->
-                  <li class="file-item" data-keywords="free ugc items combat arena slap fighting roblox">
+                  <li class="file-item" data-keywords="free ugc items ugc grinders combat arena slap fighting roblox 1200 robux donation milestone">
                     <div class="file-header">
                       <div class="file-title-wrap">
                         <span class="file-icon">💪</span>
-                        <span class="file-name">[NEW UPDATE] Free UGC Items</span>
+                        <span class="file-name">UGC Grinders &ndash; Free UGC Items (🎉 1,200 Robux Donation Milestone)</span>
                       </div>
                       <div class="file-actions">
                         <a href="https://www.roblox.com/games/81849831148777/Free-UGC-Items" target="_blank" rel="noopener noreferrer" class="redirect-chip">Play on Roblox ↗</a>
                       </div>
                     </div>
                     <div class="file-meta">
-                      <span class="meta-how">Luau · Melee Combat System · Custom Emotes</span>
-                      <span class="meta-use">Combat battle arena: slap rivals, earn power points (PP), upgrade weapons, and unlock gear.</span>
+                      <span class="meta-how">Luau · Combat Arena &amp; UGC Grinder · 1,200 Robux Community Donation</span>
+                      <span class="meta-use">Combat battle arena and UGC grinding experience. Milestone: received a generous 1,200 Robux community donation!</span>
                     </div>
                   </li>
 
@@ -2537,7 +2794,9 @@
       </div>
       <div class="social-links-grid">
         <a href="https://github.com/rishibanota" target="_blank" rel="noopener noreferrer" class="social-btn">🐙 GitHub (@rishibanota)</a>
-        <a href="https://www.linkedin.com/in/rishi-banota-584924417" target="_blank" rel="noopener noreferrer" class="social-btn">💼 LinkedIn</a>
+        <a href="https://www.linkedin.com/in/rishi-banota-584924417?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="social-btn">💼 LinkedIn</a>
+        <a href="https://youtube.com/@rishigameryt607" target="_blank" rel="noopener noreferrer" class="social-btn">▶️ YouTube (@rishigameryt607)</a>
+        <a href="https://www.reddit.com/u/CoderRishi/s/yDww3yw9KI" target="_blank" rel="noopener noreferrer" class="social-btn">🤖 Reddit (@CoderRishi)</a>
         <a href="https://x.com/BanotaRish87559" target="_blank" rel="noopener noreferrer" class="social-btn">🐦 X / Twitter (@BanotaRish87559)</a>
         <a href="https://medium.com/@rishibanota" target="_blank" rel="noopener noreferrer" class="social-btn">✍️ Medium (@rishibanota)</a>
         <a href="https://leetcode.com/u/rishibanota/" target="_blank" rel="noopener noreferrer" class="social-btn">⚡ LeetCode</a>
@@ -2662,6 +2921,40 @@
         const visibleFiles = f.querySelectorAll(".file-item:not([style*='display: none'])");
         f.style.display = visibleFiles.length === 0 ? "none" : "";
       });
+    });
+
+    // 5. Dark Mode Toggle
+    const themeToggle = document.getElementById("themeToggle");
+    const lightIcon = themeToggle.querySelector(".light-icon");
+    const darkIcon = themeToggle.querySelector(".dark-icon");
+
+    function applyTheme(theme) {
+      if (theme === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+        lightIcon.style.display = "none";
+        darkIcon.style.display = "inline";
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+        lightIcon.style.display = "inline";
+        darkIcon.style.display = "none";
+      }
+      try {
+        localStorage.setItem("theme-pref", theme);
+      } catch (err) {}
+    }
+
+    try {
+      const savedTheme = localStorage.getItem("theme-pref");
+      if (savedTheme) {
+        applyTheme(savedTheme);
+      } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        applyTheme("dark");
+      }
+    } catch (err) {}
+
+    themeToggle.addEventListener("click", () => {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      applyTheme(isDark ? "light" : "dark");
     });
   </script>
 </body>

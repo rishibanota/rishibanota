@@ -8,6 +8,7 @@
   <a href="https://rishibanota.github.io/rishibanota/"><img src="https://img.shields.io/badge/🌐_Interactive_Portfolio-Live_Site-00FFA3?style=for-the-badge&logoColor=black"/></a>
   <a href="https://toolmint.rishibanota.workers.dev"><img src="https://img.shields.io/badge/⚡_ToolMint-200+_Tools-F38020?style=for-the-badge&logo=cloudflare&logoColor=white"/></a>
   <a href="https://medium.com/@rishibanota"><img src="https://img.shields.io/badge/✍️_Medium-Read_Articles-000000?style=for-the-badge&logo=medium&logoColor=white"/></a>
+  <a href="https://youtube.com/@rishigameryt607"><img src="https://img.shields.io/badge/▶️_YouTube-Channel-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/></a>
   <a href="mailto:rishibanota837@gmail.com"><img src="https://img.shields.io/badge/✉️_Email-Get_in_Touch-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 </p>
 
@@ -21,6 +22,7 @@ I'm an **Information Technology student** at Mumbai University (SSJCOE, 2024–2
 - 💻 **What I Do:** Build fast, edge-hosted web tools, Python automation systems, Android utilities, and game mechanics
 - 🌟 **Daily Coding & Open Source:** Love building in public, writing clean code, and contributing actively to GitHub
 - 📖 **Published Author:** Authored *[1000 Amazing Facts](https://notionpress.com/in/read/1000-amazing-facts)* on Notion Press — **19 sales milestone reached at ₹120/copy!**
+- 🎮 **Roblox Creator:** Built 9+ interactive experiences — **UGC Grinders** achieved a **1,200 Robux community donation milestone!**
 - ✍️ **Writing:** Tech essays, build breakdowns, and developer guides on [Medium (@rishibanota)](https://medium.com/@rishibanota)
 - 💼 **Status:** Open to internship and collaborative software engineering opportunities
 
@@ -44,9 +46,11 @@ Here are a few selected projects that showcase how I like to design, architect, 
 ## 📚 Publications, Stores & Creator Channels
 
 - 📖 **First Book:** *[1000 Amazing Facts](https://notionpress.com/in/read/1000-amazing-facts)* — Published non-fiction paperback & eBook on Notion Press (**🎉 19 Sales Milestone at ₹120 each**)
+- 🎮 **Roblox & Indie Games:** [Roblox Profile](https://www.roblox.com/users/2887606723/profile/) & [itch.io (@rishigamer20062)](https://rishigamer20062.itch.io/) — 9+ games shipped; **UGC Grinders** achieved a **🎉 1,200 Robux player donation milestone!**
+- ▶️ **YouTube Channel:** [YouTube (@rishigameryt607)](https://youtube.com/@rishigameryt607) — Roblox gameplay, devlogs, and tech project showcases
+- 🤖 **Reddit Community:** [Reddit (@CoderRishi)](https://www.reddit.com/u/CoderRishi/s/yDww3yw9KI) — Developer community discussions, project launches & updates
 - ✍️ **Technical Articles:** [Medium (@rishibanota)](https://medium.com/@rishibanota) — Engineering essays, project insights, and tutorials
 - 🛒 **Digital Storefront:** [Gumroad (@codewithrishi)](https://codewithrishi.gumroad.com/) — Developer tools, code templates, and software starters
-- 🎮 **Indie Games:** [itch.io (@rishigamer20062)](https://rishigamer20062.itch.io/) — Playable browser games, prototypes, and game jam entries
 - 📱 **Mobile Store:** [Amazon Appstore — Rishi Games](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3ARishi%2BGames&search-type=ss) — Published Android utilities & apps catalog
 - 📝 **Educational Archive:** [Maharashtra HSC & School Textbooks Blog](https://maharashtrahscbooks.blogspot.com/) — Free state board textbook download portal for students (5th–12th Std)
 
@@ -104,7 +108,9 @@ Here are a few selected projects that showcase how I like to design, architect, 
 
 <p align="center">
   <a href="https://github.com/rishibanota"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
-  <a href="https://www.linkedin.com/in/rishi-banota-584924417"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+  <a href="https://www.linkedin.com/in/rishi-banota-584924417?utm_source=share_via&utm_content=profile&utm_medium=member_android"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+  <a href="https://youtube.com/@rishigameryt607"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/></a>
+  <a href="https://www.reddit.com/u/CoderRishi/s/yDww3yw9KI"><img src="https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white"/></a>
   <a href="https://medium.com/@rishibanota"><img src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white"/></a>
   <a href="https://x.com/BanotaRish87559"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white"/></a>
   <a href="https://leetcode.com/u/rishibanota/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/></a>
