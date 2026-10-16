@@ -6,6 +6,8 @@
 
 <p align="center">
   <a href="https://rishibanota.github.io/rishibanota/"><img src="https://img.shields.io/badge/🌐_Interactive_Portfolio-Live_Site-00FFA3?style=for-the-badge&logoColor=black"/></a>
+  <a href="https://strumlab.pages.dev/"><img src="https://img.shields.io/badge/🎸_Strum_Lab-Free_Guitar_Tuner-7928CA?style=for-the-badge&logoColor=white"/></a>
+  <a href="https://rbxassets.pages.dev/"><img src="https://img.shields.io/badge/🧱_rbxassets-Roblox_Storefront-00A2FF?style=for-the-badge&logo=roblox&logoColor=white"/></a>
   <a href="https://toolmint.rishibanota.workers.dev"><img src="https://img.shields.io/badge/⚡_ToolMint-200+_Tools-F38020?style=for-the-badge&logo=cloudflare&logoColor=white"/></a>
   <a href="https://medium.com/@rishibanota"><img src="https://img.shields.io/badge/✍️_Medium-Read_Articles-000000?style=for-the-badge&logo=medium&logoColor=white"/></a>
   <a href="https://youtube.com/@rishigameryt607"><img src="https://img.shields.io/badge/▶️_YouTube-Channel-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/></a>
@@ -35,6 +37,8 @@ Here are a few selected projects that showcase how I like to design, architect, 
 | Project | Description | Stack / Links |
 | :--- | :--- | :--- |
 | **⚡ [ToolMint](https://toolmint.rishibanota.workers.dev/)** | All-in-one suite of **200+ practical micro-tools**, calculators, converters, file inspectors, and encoders running instantly at the edge with zero bloat. | `Cloudflare Workers` · `Edge KV` · `Vanilla JS`<br>[Live Site ↗](https://toolmint.rishibanota.workers.dev/) |
+| **🎸 [Strum Lab](https://strumlab.pages.dev/)** | Studio-grade, ultra-accurate online instrument tuner for guitar, bass, and ukulele with interactive headstock, alternate tunings, metronome, and noise cleaner. Created by me as a 100% free, paywall-free browser tool for musicians. | `Web Audio API` · `React` · `Cloudflare Pages`<br>[Live Site ↗](https://strumlab.pages.dev/) |
+| **🧱 [rbxassets](https://rbxassets.pages.dev/)** | Dedicated digital web storefront designed and built by me for Roblox developers to inspect, preview, and download custom 3D models, game scripts, UI systems, and VFX with instant checkout. | `React` · `TypeScript` · `Cloudflare Pages`<br>[Live Storefront ↗](https://rbxassets.pages.dev/) |
 | **🎮 [Code Arcade](https://code-arcade-psi.vercel.app/)** | Gamified coding platform turning programming fundamentals into fast-paced mini-games: bug spotting, regex drills, binary puzzles, and speed typing. | `Next.js` · `React` · `Offline PWA`<br>[Live Game ↗](https://code-arcade-psi.vercel.app/) · [GitHub ↗](https://github.com/rishibanota/Code-Arcade) |
 | **🛍️ [TryKaro](https://trykaro.pages.dev/)** | Automated cross-store deal discovery platform scanning **40+ to 100+ stores** in a single query with smart discount sorting and bargain ranking. | `Cloudflare Pages` · `Web Scraping Pipeline`<br>[Live Site ↗](https://trykaro.pages.dev/) · [GitHub ↗](https://github.com/rishibanota/TryKaro) |
 | **🔍 [Bugseer](https://github.com/rishibanota/Bugseer)** | Automated code auditor and bug discovery tool designed to spot security issues and syntax discrepancies. | `Python` · `Static Code Analysis`<br>[GitHub Repo ↗](https://github.com/rishibanota/Bugseer) |
@@ -46,6 +50,8 @@ Here are a few selected projects that showcase how I like to design, architect, 
 ## 📚 Publications, Stores & Creator Channels
 
 - 📖 **First Book:** *[1000 Amazing Facts](https://notionpress.com/in/read/1000-amazing-facts)* — Published non-fiction paperback & eBook on Notion Press (**🎉 19 Sales Milestone at ₹120 each**)
+- 🎸 **Online Instrument Tuner:** [Strum Lab (`strumlab.pages.dev`)](https://strumlab.pages.dev/) — Studio-grade free browser tuner for guitar, bass & ukulele with real-time mic detection
+- 🧱 **Roblox Asset Marketplace:** [rbxassets (`rbxassets.pages.dev`)](https://rbxassets.pages.dev/) — My dedicated storefront for Roblox creators offering verified models, systems, and game assets
 - 🎮 **Roblox & Indie Games:** [Roblox Profile](https://www.roblox.com/users/2887606723/profile/) & [itch.io (@rishigamer20062)](https://rishigamer20062.itch.io/) — 9+ games shipped; **UGC Grinders** achieved a **🎉 1,200 Robux player donation milestone!**
 - ▶️ **YouTube Channel:** [YouTube (@rishigameryt607)](https://youtube.com/@rishigameryt607) — gameplay (Currently Stopped)
 - 🤖 **Reddit Community:** [Reddit (@CoderRishi)](https://www.reddit.com/u/CoderRishi/s/yDww3yw9KI) — Developer community discussions, project launches & updates
