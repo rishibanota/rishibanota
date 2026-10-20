@@ -24,7 +24,7 @@ I'm an **Information Technology student** at Mumbai University (SSJCOE, 2024–2
 - 💻 **What I Do:** Build fast, edge-hosted web tools, Python automation systems, Android utilities, and game mechanics
 - 🌟 **Daily Coding & Open Source:** Love building in public, writing clean code, and contributing actively to GitHub
 - 📖 **Published Author:** Authored *[1000 Amazing Facts](https://notionpress.com/in/read/1000-amazing-facts)* on Notion Press — **19 sales milestone reached at ₹120/copy!**
-- 🎮 **Roblox Creator:** Built 9+ interactive experiences — **UGC Grinders** achieved a **1,200 Robux community donation milestone!**
+- 🎮 **Roblox Creator:** Built 10+ interactive experiences — **UGC Grinders** achieved a **1,200 Robux community donation milestone!**
 - ✍️ **Writing:** Tech essays, build breakdowns, and developer guides on [Medium (@rishibanota)](https://medium.com/@rishibanota)
 - 💼 **Status:** Open to internship and collaborative software engineering opportunities
 
@@ -52,7 +52,7 @@ Here are a few selected projects that showcase how I like to design, architect, 
 - 📖 **First Book:** *[1000 Amazing Facts](https://notionpress.com/in/read/1000-amazing-facts)* — Published non-fiction paperback & eBook on Notion Press (**🎉 19 Sales Milestone at ₹120 each**)
 - 🎸 **Online Instrument Tuner:** [Strum Lab (`strumlab.pages.dev`)](https://strumlab.pages.dev/) — Studio-grade free browser tuner for guitar, bass & ukulele with real-time mic detection
 - 🧱 **Roblox Asset Marketplace:** [rbxassets (`rbxassets.pages.dev`)](https://rbxassets.pages.dev/) — My dedicated storefront for Roblox creators offering verified models, systems, and game assets
-- 🎮 **Roblox & Indie Games:** [Roblox Profile](https://www.roblox.com/users/2887606723/profile/) & [itch.io (@rishigamer20062)](https://rishigamer20062.itch.io/) — 9+ games shipped; **UGC Grinders** achieved a **🎉 1,200 Robux player donation milestone!**
+- 🎮 **Roblox & Indie Games:** [Roblox Profile](https://www.roblox.com/users/2887606723/profile/) & [itch.io (@rishigamer20062)](https://rishigamer20062.itch.io/) — 10+ games shipped; **UGC Grinders** achieved a **🎉 1,200 Robux player donation milestone!**
 - ▶️ **YouTube Channel:** [YouTube (@rishigameryt607)](https://youtube.com/@rishigameryt607) — gameplay (Currently Stopped)
 - 🤖 **Reddit Community:** [Reddit (@CoderRishi)](https://www.reddit.com/u/CoderRishi/s/yDww3yw9KI) — Developer community discussions, project launches & updates
 - ✍️ **Technical Articles:** [Medium (@rishibanota)](https://medium.com/@rishibanota) — Engineering essays, project insights, and tutorials
