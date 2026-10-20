@@ -5,6 +5,7 @@
 </p>
 
 <p align="center">
+  <a href="https://pocketai.pages.dev/"><img src="https://img.shields.io/badge/🤖_PocketAI-On--Device_AI-00D26A?style=for-the-badge&logoColor=white"/></a>
   <a href="https://rishibanota.github.io/rishibanota/"><img src="https://img.shields.io/badge/🌐_Interactive_Portfolio-Live_Site-00FFA3?style=for-the-badge&logoColor=black"/></a>
   <a href="https://strumlab.pages.dev/"><img src="https://img.shields.io/badge/🎸_Strum_Lab-Free_Guitar_Tuner-7928CA?style=for-the-badge&logoColor=white"/></a>
   <a href="https://rbxassets.pages.dev/"><img src="https://img.shields.io/badge/🧱_rbxassets-Roblox_Storefront-00A2FF?style=for-the-badge&logo=roblox&logoColor=white"/></a>
@@ -37,6 +38,7 @@ Here are a few selected projects that showcase how I like to design, architect, 
 | Project | Description | Stack / Links |
 | :--- | :--- | :--- |
 | **⚡ [ToolMint](https://toolmint.rishibanota.workers.dev/)** | All-in-one suite of **200+ practical micro-tools**, calculators, converters, file inspectors, and encoders running instantly at the edge with zero bloat. | `Cloudflare Workers` · `Edge KV` · `Vanilla JS`<br>[Live Site ↗](https://toolmint.rishibanota.workers.dev/) |
+| **🤖 [PocketAI](https://pocketai.pages.dev/)** | Private on-device AI workspace for Android running open-source LLMs locally with llama.cpp native GGUF engine. 100% offline, zero cloud inference, zero telemetry. | `Android` · `llama.cpp GGUF` · `Local AI`<br>[Live Site ↗](https://pocketai.pages.dev/) · [Download APK ↗](https://github.com/rishibanota/pocketai-app-download) |
 | **🎸 [Strum Lab](https://strumlab.pages.dev/)** | Studio-grade, ultra-accurate online instrument tuner for guitar, bass, and ukulele with interactive headstock, alternate tunings, metronome, and noise cleaner. Created by me as a 100% free, paywall-free browser tool for musicians. | `Web Audio API` · `React` · `Cloudflare Pages`<br>[Live Site ↗](https://strumlab.pages.dev/) |
 | **🧱 [rbxassets](https://rbxassets.pages.dev/)** | Dedicated digital web storefront designed and built by me for Roblox developers to inspect, preview, and download custom 3D models, game scripts, UI systems, and VFX with instant checkout. | `React` · `TypeScript` · `Cloudflare Pages`<br>[Live Storefront ↗](https://rbxassets.pages.dev/) |
 | **🎮 [Code Arcade](https://code-arcade-psi.vercel.app/)** | Gamified coding platform turning programming fundamentals into fast-paced mini-games: bug spotting, regex drills, binary puzzles, and speed typing. | `Next.js` · `React` · `Offline PWA`<br>[Live Game ↗](https://code-arcade-psi.vercel.app/) · [GitHub ↗](https://github.com/rishibanota/Code-Arcade) |
