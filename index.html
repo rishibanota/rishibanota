@@ -10,6 +10,61 @@
 <meta property="og:description" content="Useful software for the web and beyond. Selected projects, experiments, and things I have shipped." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://rishibanota.github.io/rishibanota/" />
+<link rel="canonical" href="https://rishibanota.github.io/rishibanota/" />
+<meta name="keywords" content="Rishi Banota, software builder, web developer, portfolio, open source creator, full stack developer, Mumbai, India, JavaScript, TypeScript, Python, tools maker" />
+<meta name="author" content="Rishi Banota" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<!-- OpenGraph / Social -->
+<meta property="og:site_name" content="Rishi Banota Portfolio" />
+<meta property="og:image" content="https://rishibanota.github.io/rishibanota/github-banner.png" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Rishi Banota — Developer, Tool Builder & Open-Source Creator" />
+<meta name="twitter:description" content="Rishi Banota is a software builder in Mumbai, creating high-impact web tools, automation, apps, and games." />
+<meta name="twitter:image" content="https://rishibanota.github.io/rishibanota/github-banner.png" />
+
+<!-- GEO Targeting -->
+<meta name="geo.region" content="IN-MH" />
+<meta name="geo.placename" content="Mumbai" />
+<meta name="geo.position" content="19.0760;72.8777" />
+<meta name="ICBM" content="19.0760, 72.8777" />
+
+<!-- Schema.org JSON-LD (Person & ProfilePage) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://rishibanota.github.io/rishibanota/#person",
+      "name": "Rishi Banota",
+      "jobTitle": "Software Developer & Open Source Creator",
+      "url": "https://rishibanota.github.io/rishibanota/",
+      "image": "https://rishibanota.github.io/rishibanota/github-banner.png",
+      "sameAs": [
+        "https://github.com/rishibanota"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mumbai",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://rishibanota.github.io/rishibanota/#webpage",
+      "url": "https://rishibanota.github.io/rishibanota/",
+      "name": "Rishi Banota Portfolio",
+      "about": {"@id": "https://rishibanota.github.io/rishibanota/#person"}
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -62,7 +117,7 @@
     z-index: 1;
     max-width: 1080px;
     margin: 0 auto;
-    padding: 24px 22px 100px;
+    padding: 24px max(22px, env(safe-area-inset-right)) max(100px, env(safe-area-inset-bottom)) max(22px, env(safe-area-inset-left));
     animation: pageReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
   @keyframes pageReveal {

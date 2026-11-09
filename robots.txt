@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rishibanota.github.io/rishibanota/sitemap.xml
